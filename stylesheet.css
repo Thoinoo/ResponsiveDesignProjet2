@@ -36,21 +36,72 @@ img
     max-width: 100%;
 }
 
+.navbtn
+{
+    margin: 5vw;
+    position: fixed;
+    
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
 .button 
 {
  /*  text-align: center;*/
     margin: 10%;
 }
 
+#main {
+    transition: margin-left .5s;
+  }
+
 .main
-{
+{ 
     height: 100vh;
-	width: 100vw;
+	max-width: 100vw;
+    min-width: 100vw;
 	display: flex;
     flex-direction: column;
 	justify-content:flex-start;
 	align-items: flex-start;
+
+
+    
 }
+
+
 
 .container
 {
@@ -68,6 +119,10 @@ img
 
 .containerbgless
 {
+    color: white;
+
+    background-size: cover;
+    background-image: url('media/foret.webp');
 
     margin: 0;
 
@@ -86,6 +141,11 @@ img
 .containerbggrey
 {
     background-color: #F3F6FA;
+    background-repeat: no-repeat;
+    background-size: 200vw;
+   background-position:  center;
+    background-position-y: -10vh;
+    background-image: url('media/backgroundgrey.png');
 
     display: flex;
     flex-direction: column;
@@ -94,6 +154,24 @@ img
 
     padding: 20% 10%;
 }
+
+.containerbggrey2
+{
+    background-color: #F3F6FA;
+    background-repeat: no-repeat;
+    background-size: 200vw;
+   background-position:  center;
+    background-position-y: -10vh;
+    background-image: url('media/backgroundgrey.png');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20% 10%;
+}
+
 .containerbgwhite
 {
     background-color: #FFFFFF;
@@ -109,6 +187,8 @@ img
 }
 .containerbgblue
 {
+    color: white;
+
     background-color: #83D3C9;
 
     display: flex;
@@ -117,4 +197,18 @@ img
     align-items: center;
 
     padding: 20% 10%;
+}
+
+.imgcontainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.imgblue
+{
+    max-width: 90px;
+    max-height: 90px;
 }

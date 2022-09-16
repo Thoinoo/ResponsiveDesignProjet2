@@ -8,10 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <input type="button" value="|||" >
-    </nav>
-    <div class="main">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+    <span class="navbtn">
+        <input onclick="openNav()" type="button" value="|||" >
+    </span>
+    <div onclick="closeNav()" id="main" class="main">
         <div class="containerbgless">
             <h1>Twenty</h1>
             <h3>This is Twenty, a free responsive template by HTML5 UP.</h3>
@@ -22,20 +29,33 @@
             <p>Turns out Twenty was the best I could come up with. Anyway, lame name aside, it's minimally designed, fully responsive, built on HTML5/CSS3, and, like all my stuff, released for free under the Creative Commons Attribution 3.0 license. Have fun!</p>
         </div>
         <div class="containerbgblue">
+            <div class="imgcontainer">
+                <img class="imgblue" src="media/backgroundblue/img1.png">
+                <img class="imgblue" src="media/backgroundblue/img2.png">
+                <img class="imgblue" src="media/backgroundblue/img3.png">
+                <img class="imgblue" src="media/backgroundblue/img4.png">
+                <img class="imgblue" src="media/backgroundblue/img5.png">
+                <img class="imgblue" src="media/backgroundblue/img6.png">
+            </div>
             <h2>Behold the icons that visualize what you’re all about. or just take up space. your call bro.</h2>
             <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
             <input class="button" type="button" value="Find out more">
         </div>
-        <div class="containerbggrey">
+        <div class="containerbggrey2">
             <div>
+                <img src="media/cocher.png">
                 <h3>This is Something</h3>
                 <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
             </div>
             <div>
+                
+                <img src="media/cocher.png">
                 <h3>Also Something</h3>
                 <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
             </div>
             <div>
+                
+                <img src="media/cocher.png">
                 <h3>Probably Something</h3>
                 <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
             </div>
@@ -81,7 +101,8 @@
                 <p>Design: HTML5 UP</p>
                 <p>Demo Images: Michael Domaradzki</p>
             </div>
-        </div>
+        </div> 
     </div>
+    <script src="./app.js"></script>
 </body>
 </html>
