@@ -1,13 +1,10 @@
-
-
 body
 {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 
 
-    font-family: Arial, sans-serif;
+    font-family:  Calibri, Arial, sans-serif;
 
 }
 
@@ -19,26 +16,35 @@ h1
    margin: 0;
    text-align: center;
    text-transform: uppercase;
+   letter-spacing: 7px;
+   margin-left: 9px;
    
 }
 
 h2
 {
-   font-size: 2rem;
+    margin: 5px 0;
+
+   font-size: 1.7rem;
    text-align: center;
    font-weight: lighter;
+   letter-spacing: 2px;
+   
+   text-transform: uppercase;
 }
 
 h3
 {
     
 
-    font-size: 1.2em;
+    font-size: 1.5rem;
     text-align: center;
-    margin: 10%;
 
     text-transform: uppercase;
     font-weight: lighter;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 
@@ -46,11 +52,24 @@ p
 {
     font-size: 1.2em;
     text-align: center;
+    font-weight: lighter;
+    line-height: 1.4;
+}
+
+a
+{
+    text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 b
 {
-    font-weight:700;
+    font-weight:500;
+}
+
+p b
+{
+    font-weight: 600;
 }
 
 img
@@ -63,8 +82,8 @@ img
 hr.white
 {
     border-top: 2px solid white;
-    width: 135px;
-    margin: 3px;
+    width: 154px;
+    margin: 1.5px;
 }
 
 .buttonnavbar
@@ -86,23 +105,6 @@ hr.white
     
 }
 
-.inputbuttonnavbar
-{
-    height: 100%;
-    width: 100%;
-
-    display: block;
-    position:absolute;
-
-    
-    border-width: 0;
-
-    z-index: 2;
-
-    opacity: 0;
-
-}
-
 .buttonnavbar span
 {
   display: block;
@@ -117,6 +119,23 @@ hr.white
   
   z-index: 1;
 
+
+}
+
+.inputbuttonnavbar
+{
+    height: 100%;
+    width: 100%;
+
+    display: block;
+    position:absolute;
+
+    
+    border-width: 0;
+
+    z-index: 2;
+
+    opacity: 0;
 
 }
 
@@ -144,16 +163,31 @@ hr.white
   }
   
 
-.button 
+.buttonheader
 {
-    height: 80px;
-    width: 300px;
+    height: 49px;
+    width: 240px;
 
     color: #FFFFFF;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
 
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
+    background-color: rgb(0,0,0,0);
+}
+
+.buttonwhite
+{
+    height: 49px;
+    width: 280px;
+
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+
+    border: 1px solid #ffffff;
     background-color: rgb(0,0,0,0);
 }
 
@@ -161,12 +195,13 @@ hr.white
 {
     margin: 20px;
 
-    height: 80px;
-    width: 300px;
+    height: 49px;
+    width: 280px;
 
     color: white;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
 
     border: 2px solid #83D3C9;
     background-color: #83D3C9;
@@ -174,14 +209,16 @@ hr.white
 
 .buttonblack
 {
-    height: 80px;
-    width: 300px;
+    height: 49px;
+    width: 280px;
+    margin-top: 4vh;
 
-    color: #000000;
+    color: #7C8081;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
 
-    border: 2px solid #000000;
+    border: 2px solid #7C8081;
     background-color: rgb(0,0,0,0);
 }
 
@@ -220,7 +257,7 @@ hr.white
     filter: blur(4px);
 }
 
-.containerbgless
+.header
 {
     
 
@@ -229,17 +266,12 @@ hr.white
     background-size: cover;
     background-image: url('media/foret.webp');
 
-    /*margin: 0;*/
-
-   /* height: 80vh;
-    width: 100vw;*/
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 20% 10%;
+    padding: 30% 5%;
 
 
 }
@@ -248,6 +280,8 @@ hr.white
 
 .section1
 {
+    color: #7C8081;
+
     background-color: #F3F6FA;
     background-repeat: no-repeat;
     background-size: 200vw;
@@ -260,7 +294,12 @@ hr.white
     justify-content: center;
     align-items: center;
 
-    padding: 20% 10%;
+    padding: 20% 7%;
+}
+
+.section1 a
+{
+    color: #83D3C9;
 }
 
 .section2
@@ -274,14 +313,14 @@ hr.white
     justify-content: center;
     align-items: center;
 
-    padding: 20% 10%;
+    padding: 20% 7%;
 }
 
 .section2 img
 {
     margin: 10px;
-    max-width: 90px;
-    max-height: 90px;
+    max-width: 71px;
+    max-height: 71px;
 }
 
 
@@ -294,13 +333,15 @@ hr.white
     justify-content: center;
     align-items: center;
 
-    padding: 20% 10%;
+    padding: 7% 7%;
 }
 
 .section3 div
 {
     text-align: center;
+    margin: 3.5vh 0;
 }
+
 
 .section3 img
 {
@@ -319,7 +360,30 @@ hr.white
     justify-content: center;
     align-items: center;
 
-    padding: 20% 10%;
+    padding: 5% 7%;
+    margin-bottom: 6vh;
+}
+
+
+
+.section2 p, .section3 p, .section4 p
+{
+    text-align: justify;
+}
+
+.section5
+{
+    color: white;
+
+    background-size: cover;
+    background-image: url('media/foret.webp');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15% 5%;
 }
 
 .containerarticle
@@ -337,6 +401,11 @@ footer
 
 }
 
+.footer p
+{
+    color: #7C8081;
+}
+
 
 
 .imgcontainer
@@ -345,5 +414,10 @@ footer
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, :hover
+{
+    cursor: pointer;
 }
 
