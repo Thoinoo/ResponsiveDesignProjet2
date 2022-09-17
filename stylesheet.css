@@ -1,35 +1,56 @@
+
+
 body
 {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+
+
+    font-family: Arial, sans-serif;
+
 }
+
+
 
 h1
 {
-   font-size: 4em;
+   font-size: 2em;
    margin: 0;
    text-align: center;
+   text-transform: uppercase;
+   
 }
 
 h2
 {
-   font-size: 2.5rem;
+   font-size: 2rem;
    text-align: center;
+   font-weight: lighter;
 }
 
 h3
 {
-   font-size: 2rem;
-   text-align: center;
-   margin: 10%;
+    
+
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10%;
+
+    text-transform: uppercase;
+    font-weight: lighter;
 }
 
 
 p
 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
+}
+
+b
+{
+    font-weight:700;
 }
 
 img
@@ -37,24 +58,68 @@ img
     max-width: 100%;
 }
 
-/*
-.h1menu
+
+
+hr.white
 {
-    font-size: 2rem;
-    font-weight: bold;
+    border-top: 2px solid white;
+    width: 135px;
+    margin: 3px;
 }
 
-.h2menu
+.buttonnavbar
 {
-    font-size: 1rem;
-}
-*/
-.navbtn
-{
-    margin: 5vw;
+    margin: 0;
     position: fixed;
+
+    margin: 2vh 3vw;
+    width: 13vw;
+    height: 4.5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+    background-color: #606164;
     
 }
+
+.inputbuttonnavbar
+{
+    height: 100%;
+    width: 100%;
+
+    display: block;
+    position:absolute;
+
+    
+    border-width: 0;
+
+    z-index: 2;
+
+    opacity: 0;
+
+}
+
+.buttonnavbar span
+{
+  display: block;
+  width: 23px;
+  height: 3px;
+  margin-bottom: 3px;
+  position: relative;
+
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+
+
+}
+
 
 .sidenav {
     height: 100%; 
@@ -66,7 +131,7 @@ img
     background-color: #1C2021; 
     overflow-x: hidden;
     padding-top: 10vh; 
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.5s; 
   }
 
   .sidenav a {
@@ -78,26 +143,49 @@ img
     transition: 0.3s;
   }
   
- 
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
 
 .button 
 {
- /*  text-align: center;*/
-    margin: 10%;
+    height: 80px;
+    width: 300px;
+
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2rem;
+
+    border: 2px solid #ffffff;
+    background-color: rgb(0,0,0,0);
 }
 
 .buttonblue
 {
-    margin: 10%;
+    margin: 20px;
+
+    height: 80px;
+    width: 300px;
+
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+
+    border: 2px solid #83D3C9;
+    background-color: #83D3C9;
 }
+
+.buttonblack
+{
+    height: 80px;
+    width: 300px;
+
+    color: #000000;
+    text-align: center;
+    font-size: 2rem;
+
+    border: 2px solid #000000;
+    background-color: rgb(0,0,0,0);
+}
+
+
 
 #main {
     transition: margin-left .5s;
@@ -141,20 +229,23 @@ img
     background-size: cover;
     background-image: url('media/foret.webp');
 
-    margin: 0;
+    /*margin: 0;*/
 
-    height: 80vh;
-    width: 100vw;
+   /* height: 80vh;
+    width: 100vw;*/
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 20% 0;
+    padding: 20% 10%;
 
 
 }
+
+
+
 .section1
 {
     background-color: #F3F6FA;
