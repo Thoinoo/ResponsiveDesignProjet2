@@ -353,12 +353,11 @@ hr.white
 .section1
 {
     color: #7C8081;
-
     background-color: #F3F6FA;
+
     background-repeat: no-repeat;
-    background-size: 200vw;
-    background-position:  center;
-    background-position-y: -15vh;
+    background-size: auto 100%;
+    background-position:  top;
     background-image: url('media/backgroundgrey.png');
 
     display: flex;
@@ -367,6 +366,11 @@ hr.white
     align-items: center;
 
     padding: 20% 7%;
+}
+
+.section1 h3
+{
+    margin-top: 70px;
 }
 
 .section1 a
