@@ -1,3 +1,8 @@
+html
+{
+    margin: 0;
+}
+
 body
 {
     margin: 0;
@@ -354,23 +359,28 @@ hr.white
 {
     color: #7C8081;
     background-color: #F3F6FA;
-
+    /*
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto 130%;
     background-position:  top;
-    background-image: url('media/backgroundgrey.png');
+    background-image: url('media/backgroundgrey.png');*/
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 20% 7%;
+    padding: 3% 7%;
+}
+
+.section1 img
+{
+    max-width: 200%;
 }
 
 .section1 h3
 {
-    margin-top: 70px;
+   margin-top: -20px;
 }
 
 .section1 a
@@ -389,7 +399,15 @@ hr.white
     justify-content: center;
     align-items: center;
 
-    padding: 20% 7%;
+    padding: 7% 7%;
+}
+
+.section2text
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .section2 img
@@ -422,7 +440,7 @@ hr.white
 
 .section3 img
 {
-    max-width: 30vw;
+    max-height: 12vh;
     
 }
 
@@ -440,6 +458,11 @@ hr.white
 
     padding: 5% 7%;
     margin-bottom: 6vh;
+}
+
+.section4 img
+{
+    width: 100%;
 }
 
 
@@ -534,3 +557,111 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     cursor: pointer;
 }
 
+@media screen and (min-width: 769px)
+{
+    body
+    {
+        background-image: url("media/foret.webp");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    
+
+    .header
+    {
+        background-color: rgba(0, 0, 0, 0.192);
+        height: 400px;
+        width: 300px;
+        margin:0;
+        padding: 0 5%;
+
+        background-image: none;
+        background-color: #00000085;
+    }
+
+    .headercontainer
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10vh auto;
+    }
+
+    .sectioncontainer
+    {
+        margin: 0;
+        padding: 0 10%;
+        padding-bottom: 10vh;
+        background-color: #F3F6FA;
+
+    }
+
+    .section1
+    {
+        padding: 0 20%;
+        padding-top: 0;
+        padding-bottom: 5%;
+    }
+
+    .section1 img
+    {
+        max-width: 150%;
+        margin-bottom: 50px;
+    }
+
+    .section2
+    {
+        flex-direction: row-reverse;
+    }
+
+    .section2text
+    {
+        width: 60%;
+    }
+
+    
+
+    .imgcontainer
+    {
+        width: 30%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .section2 img 
+    {
+        max-height: 30%;
+    }
+
+
+    .section5
+    {
+        background-image: none;
+        padding: 0;
+        padding: 5vh 0;
+    }
+
+    .footer
+    {
+        background-color: #F3F6FA;
+        padding: 5vh;
+    }
+
+    .footer input 
+    {
+        min-height: 5vh;
+        min-width: 5vh;
+    }
+
+    .container
+    {
+        flex-direction: row;
+    }
+
+
+}
