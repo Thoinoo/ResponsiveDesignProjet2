@@ -567,12 +567,41 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
         background-size: cover;
 
     }
+
+        
+    h1
+    {
+        font-size: 4em;
+    }
+
+    h2
+    {
+        font-size: 2.3em
+    }
+
+    h3
+    {
+        line-height: 1.5em;
+    }
+
+
+    p
+    {
+        font-size: 1.4em;
+    }
+
+    hr.white
+    {
+        border-top: 2px solid white;
+        width: 264px;
+        margin: 3.5px;
+    }
     
 
     .header
     {
         background-color: rgba(0, 0, 0, 0.192);
-        height: 400px;
+        height: 450px;
         width: 300px;
         margin:0;
         padding: 0 5%;
@@ -592,7 +621,7 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     .sectioncontainer
     {
         margin: 0;
-        padding: 0 10%;
+        padding: 0 5%;
         padding-bottom: 10vh;
         background-color: #F3F6FA;
 
@@ -600,42 +629,84 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 
     .section1
     {
-        padding: 0 20%;
+        padding: 0 10%;
         padding-top: 0;
         padding-bottom: 5%;
     }
 
     .section1 img
     {
-        max-width: 150%;
-        margin-bottom: 50px;
+        max-width: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
+
     }
 
     .section2
     {
         flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+
+    .section2 p, .section2 h2
+    {
+        text-align: left;
     }
 
     .section2text
     {
         width: 60%;
-    }
-
-    
-
-    .imgcontainer
-    {
-        width: 30%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
+        align-items: start;
     }
 
     .section2 img 
     {
         max-height: 30%;
+    }
+    
+
+    .imgcontainer
+    {
+        width: 30%;
+    }
+
+    .imgcontainer img 
+    {
+        max-width: 40%;
+    }
+
+
+    .section3
+    {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .section3 div 
+    {
+        padding: 3%;
+    }
+
+    .section3 p, .section4 p
+    {
+        text-align: center;
+    }   
+
+
+    .section4
+    {
+        padding: 5% 0;
+    }
+
+    .containerarticle
+    {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .article
+    {
+        width: 40%;
     }
 
 
@@ -654,13 +725,22 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 
     .footer input 
     {
-        min-height: 5vh;
-        min-width: 5vh;
+        min-height: 7vh;
+        min-width: 7vh;
     }
 
     .container
     {
         flex-direction: row;
+    }
+
+    .dottedpipe
+    {
+        width: 1px;
+        height: 17px;
+        border-left: 1px dotted rgb(58, 58, 58);
+
+        margin: 0 20px;
     }
 
 
