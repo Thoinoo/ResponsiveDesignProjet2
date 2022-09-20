@@ -359,7 +359,7 @@ hr.white
 
 
 
-.section1
+.intro
 {
     color: #7C8081;
     background-color: #F3F6FA;
@@ -377,22 +377,22 @@ hr.white
     padding: 3% 7%;
 }
 
-.section1 img
+.intro img
 {
     max-width: 200%;
 }
 
-.section1 h3
+.intro h3
 {
    margin-top: -20px;
 }
 
-.section1 a
+.intro a
 {
     color: #83D3C9;
 }
 
-.section2
+.bluesection
 {
     color: white;
 
@@ -406,7 +406,7 @@ hr.white
     padding: 7% 7%;
 }
 
-.section2text
+.bluesectiontext
 {
     display: flex;
     flex-direction: column;
@@ -414,7 +414,7 @@ hr.white
     align-items: center;
 }
 
-.section2 img
+.bluesection img
 {
     margin: 10px;
     max-width: 71px;
@@ -422,7 +422,7 @@ hr.white
 }
 
 
-.section3
+.checkmarksection
 {
     color: #7C8081;
     background-color: #F3F6FA;
@@ -435,20 +435,20 @@ hr.white
     padding: 7% 7%;
 }
 
-.section3 div
+.checkmarksection div
 {
     text-align: center;
     margin: 3.5vh 0;
 }
 
 
-.section3 img
+.checkmarksection img
 {
     max-height: 12vh;
     
 }
 
-.section4
+.articlesection
 {
     color: #7C8081;
     background-color: #FFFFFF;
@@ -464,19 +464,19 @@ hr.white
     margin-bottom: 6vh;
 }
 
-.section4 img
+.articlesection img
 {
     width: 100%;
 }
 
 
 
-.section2 p, .section3 p, .section4 p
+.bluesection p, .checkmarksection p, .articlesection p
 {
     text-align: justify;
 }
 
-.section5
+.prefooter
 {
     color: white;
 
@@ -565,6 +565,7 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 {
     body
     {
+
         background-image: url("media/foret.webp");
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -594,6 +595,11 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
         font-size: 1.4em;
     }
 
+    .h1menu
+    {
+        width: 100px;
+    }
+/*
     .topnavbar
     {
 
@@ -605,10 +611,11 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
         display:flex;
         justify-content: space-between;
 
-    }
+    }*/
 
-    .topnavbar a
+    .sidenav a
     {
+        color: white;
         margin-right: 30px;
         padding: 10px 20px;
         text-decoration: none;
@@ -646,29 +653,18 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
         border: 1px solid rgb(226, 226, 226);
     }
 
-    .arrowdown
-    {
-            border: solid white;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-            margin-right: 13px;
-
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-    }
+    
 
     #buttonsignup
     {
         background-color: #83D3C9;
 
-        transition: 0.3s;
     }
     #buttonsignup:hover
     {
         background-color: #96DAD1;
     }
-
+/*
     .topnavbarright
     {
         display: flex;
@@ -680,11 +676,59 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     {
         display: flex;
     }
+*/
 
+    .arrowdown
+    {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-right: 13px;
+
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+    }
     
 
     .sidenav
     {
+        position: static;
+
+        width: 100%;
+        height: 10vh;
+
+        color: white;
+        background-color: rgba(167, 33, 33, 0);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        overflow-x: visible;
+        
+
+    }
+
+    .sidenav span 
+    {
+        display: none;
+    }
+
+    .sidenav ul 
+    {
+        display:inline;
+
+        padding-left: 0;
+
+        width: 33%;
+
+        display: flex;
+        flex-direction: row;
+    }
+    .sidenav ul ul
+    {
+        
         display: none;
     }
 
@@ -731,14 +775,14 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 
     }
 
-    .section1
+    .intro
     {
         padding: 0 10%;
         padding-top: 0;
         padding-bottom: 5%;
     }
 
-    .section1 img
+    .intro img
     {
         max-width: 100%;
         margin-bottom: 0;
@@ -746,24 +790,24 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 
     }
 
-    .section2
+    .bluesection
     {
         flex-direction: row-reverse;
         justify-content: space-evenly;
     }
 
-    .section2 p, .section2 h2
+    .bluesection p, .bluesection h2
     {
         text-align: left;
     }
 
-    .section2text
+    .bluesectiontext
     {
         width: 60%;
         align-items: start;
     }
 
-    .section2 img 
+    .bluesection img 
     {
         max-height: 30%;
     }
@@ -780,24 +824,24 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     }
 
 
-    .section3
+    .checkmarksection
     {
         flex-direction: row;
         padding: 0;
     }
 
-    .section3 div 
+    .checkmarksection div 
     {
         padding: 3%;
     }
 
-    .section3 p, .section4 p
+    .checkmarksection p, .articlesection p
     {
         text-align: center;
     }   
 
 
-    .section4
+    .articlesection
     {
         padding: 5% 0;
     }
@@ -814,7 +858,7 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     }
 
 
-    .section5
+    .prefooter
     {
         background-image: none;
         padding: 0;

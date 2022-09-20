@@ -11,9 +11,9 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <ul>
-            <li><a  class="h1menu" href="#">WELCOME</a></li>
+            <li><a id="buttonwelcome"  class="h1menu" href="#">WELCOME</a></li>
             <span></span>
-            <li><a class="h1menu" href="#">LAYOUTS</a></li>
+            <li><a id="buttonlayouts" class="h1menu" href="#">LAYOUTS</a></li>
             <span></span>
             <ul>
                 <li><a class="h2menu" href="#">LEFT SIDEBAR</a></li>
@@ -65,7 +65,7 @@
                 </ul>
             </ul>
             <span></span>
-            <li><a class="h1menu" href="#">SIGN UP</a></li>
+            <li><a id="buttonsignup" class="h1menu" href="#">SIGN UP</a></li>
         </ul>
         
     </div>
@@ -76,6 +76,7 @@
             <span></span>
             <input class="inputbuttonnavbar" onclick="openNav()" type="button"  >
         </span>
+        <!--
         <div class="topnavbar">
             <div class="topnavbarleft">
                 <a id="buttontwenty"><b>TWENTY</b> BY HTML5 UP</a>
@@ -86,6 +87,7 @@
                 <a id="buttonsignup">SIGN UP</a>
             </div>
         </div>
+        -->
         <div onclick="closeNav()">
             <div class="headercontainer">
                 <div class="header">
@@ -99,12 +101,12 @@
                 </div>
             </div>
             <div class="sectioncontainer">
-                <div class="section1">
+                <div class="intro">
                     <img src="media/backgroundgrey.png">
                     <h2>AS THIS IS MY <b>TWENTIETH</b> FREEBIE FOR HTML5 UP I DECIDED TO GIVE IT A REALLY CREATIVE NAME.</h2>
                     <p>Turns out <b>Twenty</b> was the best I could come up with. Anyway, lame name aside, it's minimally designed, fully responsive, built on HTML5/CSS3, and, like all my stuff, released for free under the <a>Creative Commons Attribution 3.0</a> license. Have fun!</p>
                 </div>
-                <div class="section2">
+                <div class="bluesection">
                     <div class="imgcontainer">
                         <img src="media/backgroundblue/img1.png">
                         <img src="media/backgroundblue/img2.png">
@@ -119,7 +121,7 @@
                         <input class="buttonwhite" type="button" value="FIND OUT MORE">
                     </div>
                 </div>
-                <div class="section3">
+                <div class="checkmarksection">
                     <div>
                         <img src="media/cocher.png">
                         <h3>This is Something</h3>
@@ -138,7 +140,7 @@
                         <p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
                     </div>
                 </div>
-                <div class="section4">
+                <div class="articlesection">
                     <h2>Next look at this <b>cool stuff</b></h2>
                     <div class="containerarticle">
                         <div class="article">
@@ -165,7 +167,7 @@
                     <input type="button" class="buttonblack" value="SEE MORE">
                 </div>
             </div>
-            <div class="section5">
+            <div class="prefooter">
                 <h2>Ready to do <b>something</b>?</h2>
                 <p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
                 <div class="container">
