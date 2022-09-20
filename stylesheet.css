@@ -15,7 +15,6 @@ body
 }
 
 
-
 h1
 {
    font-size: 2em;
@@ -99,6 +98,11 @@ hr.white
     border-top: 2px solid white;
     width: 154px;
     margin: 1.5px;
+}
+
+.topnavbar
+{
+    display: none;
 }
 
 .buttonnavbar
@@ -590,6 +594,105 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
         font-size: 1.4em;
     }
 
+    .topnavbar
+    {
+
+        color: white;
+
+        width: 85%;
+        padding: 50px;
+
+        display:flex;
+        justify-content: space-between;
+
+    }
+
+    .topnavbar a
+    {
+        margin-right: 30px;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1.3rem;
+
+        transition: 0.3s;
+    }
+
+    #buttontwenty
+    {
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+
+    #buttonwelcome
+    {
+        border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+    #buttonwelcome:hover
+    {
+        background-color: rgba(255, 255, 255, 0.301);
+        border: 1px solid rgb(226, 226, 226); 
+    }
+
+    
+    #buttonlayouts
+    {
+        border: 1px solid rgba(255, 255, 255, 0);
+    }
+    #buttonlayouts:hover
+    {
+        background-color: rgba(255, 255, 255, 0.301);
+        border: 1px solid rgb(226, 226, 226);
+    }
+
+    .arrowdown
+    {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-right: 13px;
+
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+    }
+
+    #buttonsignup
+    {
+        background-color: #83D3C9;
+
+        transition: 0.3s;
+    }
+    #buttonsignup:hover
+    {
+        background-color: #96DAD1;
+    }
+
+    .topnavbarright
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .topnavbarleft
+    {
+        display: flex;
+    }
+
+    
+
+    .sidenav
+    {
+        display: none;
+    }
+
+    .buttonnavbar
+    {
+        display: none;
+    }
+
     hr.white
     {
         border-top: 2px solid white;
@@ -613,6 +716,7 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
     .headercontainer
     {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: 10vh auto;
@@ -742,6 +846,7 @@ a, .inputbuttonnavbar, .buttonblack, .buttonblue, .buttonheader, .buttonwhite, .
 
         margin: 0 20px;
     }
+
 
 
 }
