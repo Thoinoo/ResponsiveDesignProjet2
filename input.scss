@@ -1,0 +1,256 @@
+@use "sass:map";
+@use "sass:math";
+@use "config";
+
+
+@function brigthencolor($color)
+{
+    //allez bonne chance
+}
+
+@mixin button($name, $background, $border, $text, $hover)
+{
+    .button-#{$name}
+    {
+        padding: 5% 5%;
+        text-align: center;
+
+        background-color: $background;
+        border: 1px solid $border;
+        color: $text;
+
+        font-size: config.$defaultfontsize;
+        font-weight: map.get( config.$fontweight,"large" ) ;
+
+        
+        width: 17rem;
+        margin: 0.5rem;
+
+        transition: 0.3s;
+        &:hover
+        {
+            background-color: $hover;
+        }
+    }
+}
+
+
+
+
+
+
+%flex-center-column
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    
+}
+
+html
+{
+    font-size: config.$defaultfontsize;
+    font-family: config.$fontfamily;
+}
+
+.imgcoloredsection
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+h1
+{
+    width: fit-content;
+
+    letter-spacing: 3px;
+
+    border-top: 8px double config.$primary;
+    border-bottom: 8px double config.$primary;
+}
+
+h2, h3
+{
+    letter-spacing: 1.5px;
+}
+
+p
+{
+    letter-spacing: 1px;
+}
+
+.footer 
+{
+    background-color: config.$primary;
+
+    input
+    {   
+        margin: 0.2rem;
+        width: 2.5rem;
+
+        transition: config.$transitionsocial;
+        &:hover{
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+            filter: brightness(115%);
+        }
+    }
+}
+
+.headercontainer, .coloredsection, .prefooter
+{
+    color: config.$tertiary;
+}
+
+.sectioncontainer
+{
+    background-color: config.$primary;
+}
+
+.header
+{
+    @extend %flex-center-column
+}
+
+.coloredsection
+{
+    background-color: config.$quaternay;
+}
+
+.coloredsection, .intro, .checkmarksection, .articlesection, .prefooter, .footer
+{
+    @extend %flex-center-column;
+    padding: map.get( config.$padding, "medium" ) map.get( config.$padding, "thin" ) ;
+    
+}
+
+.headercontainer, .prefooter
+{
+    background-image: url("media/banner.jpg");
+    background-repeat: no;
+    background-size: cover;
+    background-position: center;
+}
+
+.prefooter
+{
+    h2 
+    {
+        margin: auto 5rem;
+    }
+}
+
+.headercontainer
+{
+    @extend %flex-center-column;
+    padding: map.get(config.$padding, "large") map.get(config.$padding, "medium") ;
+}
+
+.main 
+{
+    position: relative;
+
+    transition: config.$transitionnavbar;
+
+}
+
+body
+{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.buttonnavbar
+{
+    top: 1em;
+    left: 1em;
+    position: absolute ;
+
+    transition: config.$transitionnavbar;
+
+}
+
+
+.articlesection
+{
+    background-color: config.$tertiary;
+
+    .article
+    {
+        margin: 3em 0;
+    }
+    img{
+        width: 100%;
+    }
+    h2 
+    {
+        margin: 0;
+    }
+}
+
+.coloredsection, .checkmarksection{
+    img{
+        max-width: 7em;
+        margin: 0.5em;
+    }
+}
+
+.sidenav
+{
+    position: fixed;
+
+    width: 90vw;
+    left: -90vw;
+    top:0;
+
+    transition: config.$transitionnavbar;
+}
+
+@include button("tertiary", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.4) ); 
+@include button("secondary", rgba(config.$secondary,0), config.$secondary , config.$secondary , rgba(config.$secondary,0.4) );
+@include button("quaternary", rgba(config.$quaternay,1), config.$quaternay , config.$primary , rgba(config.$quaternay,0.4) );
+@include button("header", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.4) ); 
+
+.button-header
+{
+    width: 13.5rem;
+}
+
+@each $name, $ratio in config.$fontsize {
+    #{$name} 
+    {
+        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio) ;
+        @if $name != "p" {
+            text-transform: uppercase;            
+        }
+        @if $name != "h1" {
+            font-weight: config.$defaultfontweight;            
+        }
+    }
+    
+} 
+
+.intro, .checkmarksection, .articlesection, .footer
+{
+    color: config.$secondary;
+}
+
+
+
+
+@media screen and (min-width: 769px)
+{
+    @each $name, $ratio in config.$fontsize {
+        #{$name} 
+        {
+            font-size: (map.get(config.$fontsizescreen,"desktop") * $ratio) ;
+        }
+        
+    }   
+}

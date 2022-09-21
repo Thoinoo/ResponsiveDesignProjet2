@@ -1,15 +1,9 @@
-html
-{
-    margin: 0;
-}
+
 
 body
 {
     margin: 0;
-    padding: 0;
-
     overflow-x: hidden;
-
     font-family:  Calibri, Arial, sans-serif;
 
 }
@@ -18,37 +12,31 @@ body
 h1
 {
    font-size: 2em;
-   margin: 0;
-   text-align: center;
    text-transform: uppercase;
-   letter-spacing: 7px;
-   margin-left: 9px;
    
+   border-bottom: 5px double white ;
+   border-top: 5px double white ;
 }
 
 h2
 {
-    margin: 5px 0;
-
    font-size: 1.7rem;
-   text-align: center;
-   font-weight: lighter;
-   letter-spacing: 2px;
+
    
+   letter-spacing: 2px;
+   font-weight: lighter;
    text-transform: uppercase;
+   text-align: center;
 }
 
 h3
 {
-    
-
     font-size: 1.5rem;
-    text-align: center;
 
+    text-align: center;
     text-transform: uppercase;
     font-weight: lighter;
     letter-spacing: 2px;
-
     text-transform: uppercase;
 }
 
@@ -56,6 +44,8 @@ h3
 p
 {
     font-size: 1.2em;
+
+
     text-align: center;
     font-weight: lighter;
     line-height: 1.4;
@@ -65,8 +55,6 @@ a
 {
     text-decoration: underline;
     text-decoration-style: dotted;
-
-    
     transition: 0.4s;
 }
 
@@ -86,10 +74,6 @@ p b
     font-weight: 600;
 }
 
-img
-{
-    max-width: 100%;
-}
 
 
 
