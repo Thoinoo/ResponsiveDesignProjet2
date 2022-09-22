@@ -1,0 +1,41 @@
+
+@mixin button($name, $background, $border, $text, $hover)
+{
+    .button-#{$name}
+    {
+        text-align: center;
+
+        background-color: $background;
+        border: 1px solid $border;
+        color: $text;
+
+        font-size: config.$defaultfontsize;
+        font-weight: map.get( config.$fontweight,"large" ) ;
+
+        
+        width: 100%;
+        max-width: 17rem;
+
+        line-height: 3em;
+
+        margin: 0.5rem;
+
+        transition: 0.3s;
+        &:hover
+        {
+            background-color: $hover;
+            cursor: pointer;
+        }
+    }
+}
+
+%flex-center-column
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    
+}

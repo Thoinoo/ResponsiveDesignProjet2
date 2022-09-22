@@ -1,53 +1,31 @@
 @use "sass:map";
 @use "sass:math";
 @use "config";
+@import "ressources";
 
 
-@function brigthencolor($color)
+
+
+
+a
 {
-    //allez bonne chance
-}
-
-@mixin button($name, $background, $border, $text, $hover)
-{
-    .button-#{$name}
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: 0.4s;
+    &:hover
     {
-        padding: 5% 5%;
-        text-align: center;
-
-        background-color: $background;
-        border: 1px solid $border;
-        color: $text;
-
-        font-size: config.$defaultfontsize;
-        font-weight: map.get( config.$fontweight,"large" ) ;
-
-        
-        width: 17rem;
-        margin: 0.5rem;
-
-        transition: 0.3s;
-        &:hover
-        {
-            background-color: $hover;
-        }
+        text-decoration-color: rgb(0,0,0,0);
+        cursor: pointer;
     }
 }
 
 
-
-
-
-
-%flex-center-column
+.coloredsection, .checkmarksection, .articlesection
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    text-align: center;
-    
+    p
+    {
+        text-align: justify;
+    }
 }
 
 html
@@ -115,7 +93,15 @@ p
 
 .header
 {
-    @extend %flex-center-column
+    opacity: 0;
+    @extend %flex-center-column;
+
+    transition: config.$transitionheader;
+
+    h1, h3
+    {
+        cursor: default;
+    }
 }
 
 .coloredsection
@@ -154,6 +140,8 @@ p
 
 .main 
 {
+    left: 0;
+
     position: relative;
 
     transition: config.$transitionnavbar;
@@ -166,14 +154,75 @@ body
     overflow-x: hidden;
 }
 
+
+
 .buttonnavbar
 {
     top: 1em;
     left: 1em;
     position: absolute ;
 
-    transition: config.$transitionnavbar;
+    height: 2.5em;
+    width: 3.5em;
 
+    padding: 1em;
+
+    color: config.$primary;
+    background-color: rgba(config.$secondary,0.8);
+
+    border-radius: 3px;
+    border: 0;
+
+    transition: config.$transitionnavbar;
+}
+
+.buttonnavbaricon
+{
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+
+    width: 0.9rem;
+
+    fill: config.$primary;
+
+}
+
+.buttonnavbarcontainer
+{
+    position: fixed;
+}
+
+
+
+.sidenav
+{
+    width: 90vw;
+    left: -90vw;
+
+    background-color: config.$fifth;
+    height: 110%;
+    position: fixed;
+    top: -1.1em;
+
+    transition: config.$transitionnavbar;
+    ul 
+    {
+        list-style-type: none;
+        padding-left: 1em;
+    }
+    li 
+    {
+        border-top: 0.5px solid rgba(config.$primary, 0.2);
+        padding: 0.5em;
+
+    }
+    a
+    {
+        color: config.$primary;
+        text-decoration: none;
+    }
+    
 }
 
 
@@ -195,31 +244,36 @@ body
 }
 
 .coloredsection, .checkmarksection{
+    div 
+    {
+        margin: map.get(config.$padding, "thin") 0 ;
+    }
     img{
-        max-width: 7em;
+        max-width: 5em;
         margin: 0.5em;
     }
 }
 
-.sidenav
+
+
+
+
+
+// button($name, $background color , $border color , $text color, background color on hover )
+@include button("tertiary", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.1) ); 
+@include button("secondary", rgba(config.$secondary,0), config.$secondary , config.$secondary , rgba(config.$secondary,0.1) );
+@include button("quaternary", rgba(config.$quaternay,1), config.$quaternay , config.$primary , config.$quaternay );
+@include button("header", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.1) ); 
+
+
+.button-quaternary:hover
 {
-    position: fixed;
-
-    width: 90vw;
-    left: -90vw;
-    top:0;
-
-    transition: config.$transitionnavbar;
+    filter: brightness(1.075);
 }
-
-@include button("tertiary", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.4) ); 
-@include button("secondary", rgba(config.$secondary,0), config.$secondary , config.$secondary , rgba(config.$secondary,0.4) );
-@include button("quaternary", rgba(config.$quaternay,1), config.$quaternay , config.$primary , rgba(config.$quaternay,0.4) );
-@include button("header", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.4) ); 
 
 .button-header
 {
-    width: 13.5rem;
+    max-width: 13.5rem;
 }
 
 @each $name, $ratio in config.$fontsize {
@@ -241,6 +295,10 @@ body
     color: config.$secondary;
 }
 
+.intro a
+{
+    color: config.$quaternay ;
+}
 
 
 

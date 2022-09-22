@@ -17,13 +17,13 @@ function openNav(e) {
 
     if (document.getElementById("mySidenav").style.left == "0")
     {
-      document.getElementById("mySidenav").style.left = "-90VW";
+      document.getElementById("mySidenav").style.left = "-18rem";
       document.getElementById("main").style.left = "0";
     }
     else
     {
       document.getElementById("mySidenav").style.left = "0";
-      document.getElementById("main").style.left = "90VW";
+      document.getElementById("main").style.left = "18rem";
     }
     setTimeout(() => {closed = false; /*console.log('opened')*/}, 300)
   }
@@ -32,12 +32,17 @@ function openNav(e) {
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   if(!closed) {
-    document.getElementById("mySidenav").style.left = "-90vw";
+    document.getElementById("mySidenav").style.left = "-18rem";
     document.getElementById("main").style.left = "0";
     setTimeout(() => {closed = true; console.log('closed')}, 300)
   }
 } 
 
+function displayheader()
+{
+  console.log("displayheader");
+  document.getElementById("myheader").style.opacity = 1;
+}
 
 document.getElementById('main').addEventListener("click", closeNav);
 document.getElementById('menuButton').addEventListener("click", openNav);

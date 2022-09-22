@@ -9,7 +9,7 @@
     <link rel="icon" href="media/icon.ico"/>
     <title>Twenty | HTML5 UP</title>
 </head>
-<body>
+<body onload="displayheader()">
     <div id="mySidenav" class="sidenav" >
         <ul>
             <li><a id="buttonwelcome"  class="h1menu" href="#">WELCOME</a></li>
@@ -32,12 +32,16 @@
         </ul>
     </div>
     <div  id="main" class="main" >
-        <button id="menuButton" class="buttonnavbar"><i class="fa-light fa-bars"></i></button>
+        <div class="buttonnavbarcontainer">
+            <button id="menuButton"   class="buttonnavbar">
+                <svg  class="buttonnavbaricon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            </button>
+        </div>
         <div class="headercontainer">
-            <div class="header">
+            <div class="header" id="myheader">
                 <h1>Twenty</h1>
                 <h3>This is <b>Twenty</b>, a free responsive template by <a>HTML5 UP</a>.</h3>
-                <input class="button-header" value="TELL ME MORE">
+                <input type="button" class="button-header" value="TELL ME MORE">
             </div>
         </div>
         <div class="sectioncontainer">
