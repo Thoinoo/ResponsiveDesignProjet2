@@ -54,6 +54,9 @@ body {
 }
 
 h1 {
+  letter-spacing: 5px;
+  border-top: 8px double #F3F6FA;
+  border-bottom: 8px double #F3F6FA;
   width: fit-content;
   letter-spacing: 3px;
   border-top: 8px double #F3F6FA;
@@ -322,7 +325,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.8em;
   text-transform: uppercase;
   font-weight: lighter;
 }
@@ -336,6 +339,15 @@ h3 {
 p {
   font-size: 1.2em;
   font-weight: lighter;
+}
+
+h2,
+h3 {
+  letter-spacing: 1.5px;
+}
+
+p {
+  letter-spacing: 1px;
 }
 
 .intro,
@@ -377,7 +389,7 @@ p {
     font-size: 2.75em;
   }
   h2 {
-    font-size: 2em;
+    font-size: 2.25em;
   }
   h3 {
     font-size: 1.5em;
@@ -385,9 +397,24 @@ p {
   p {
     font-size: 1.5em;
   }
+  p {
+    font-size: 1.3em;
+  }
+  .checkmarksection {
+    flex-direction: row;
+  }
+  .checkmarksection p {
+    text-align: center;
+  }
+  .checkmarksection div {
+    margin: 1.8em 0;
+  }
+  .checkmarksection i {
+    font-size: 7em;
+  }
   .header {
-    padding: 1.8em 1.8em;
-    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2em;
+    background-color: rgba(34, 8, 0, 0.4);
     width: 20em;
   }
   .buttonnavbarcontainer {
@@ -395,6 +422,7 @@ p {
   }
   body {
     background-image: url("media/banner.jpg");
+    background-size: cover;
     background-attachment: fixed;
   }
   .headercontainer {
@@ -416,38 +444,67 @@ p {
     background-size: 26em, 26em , 15em;
     background-position: top left, top right , center;
   }
+  .footer p {
+    font-size: 1em;
+  }
+  .prefooter,
+.footer,
+.coloredsection,
+.articlesection {
+    padding: 5em 5em;
+  }
+  .containerarticle {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  .containerarticle p {
+    text-align: center;
+  }
+  .containerarticle div {
+    width: 45%;
+  }
   .coloredsection {
     background-image: url("media/background/light-br.svg"), url("media/background/light-bl.svg");
     background-repeat: no-repeat, no-repeat;
     background-size: 26em, 26em;
     background-position: bottom right, bottom left;
-  }
-  .coloredsection {
     flex-direction: row-reverse;
-    padding: 5em 5em;
   }
   .coloredsection svg {
     width: 7em;
     padding: 0.5em;
   }
-  /*
-  .imgcoloredsection {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-  }*/
+  h1 {
+    font-size: 3.75em;
+    letter-spacing: 8px;
+  }
+  .dottedpipe::after {
+    content: "";
+    height: 10.5rem;
+    border-right: 1px dotted #7C8081;
+    margin: 1rem;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+  }
   .coloredsectiontext {
     min-width: 65%;
     max-width: 65%;
     text-align: left;
   }
   .intro {
-    padding: 2em 9em;
+    padding: 2em 12em;
   }
   .line-decoration i {
     margin: 0 3rem;
     font-size: 4em;
+  }
+  .footer input {
+    width: 4em;
   }
 }
 

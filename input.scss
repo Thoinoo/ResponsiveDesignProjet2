@@ -24,8 +24,6 @@ a {
 
 
 
-
-
 .coloredsection,
 .checkmarksection,
 .articlesection {
@@ -50,6 +48,15 @@ body {
 
 
 h1 {
+
+
+
+    letter-spacing: 5px;
+
+    border-top: 8px double config.$primary;
+    border-bottom: 8px double config.$primary;
+
+
     width: fit-content;
 
     letter-spacing: 3px;
@@ -330,6 +337,17 @@ $ratio in config.$fontsize {
 
 }
 
+
+
+h2,
+h3 {
+    letter-spacing: 1.5px;
+}
+
+p {
+    letter-spacing: 1px;
+}
+
 .intro,
 .checkmarksection,
 .articlesection,
@@ -394,6 +412,8 @@ $ratio in config.$fontsize {
 
 @media screen and (min-width: 769px) {
 
+
+
     @each $name,
     $ratio in config.$fontsize {
         #{$name} {
@@ -402,10 +422,31 @@ $ratio in config.$fontsize {
 
     }
 
-    .header {
-        padding: map.get(config.$padding, "thin") map.get(config.$padding, "thin");
+    p {
+        font-size: 1.3em;
+    }
 
-        background-color: rgba(0, 0, 0, 0.4);
+
+    .checkmarksection {
+        flex-direction: row;
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            margin: map.get(config.$padding, "thin") 0;
+        }
+
+        i {
+            font-size: 7em;
+        }
+    }
+
+    .header {
+        padding: map.get(config.$padding, "mledium") map.get(config.$padding, "medium");
+
+        background-color: rgba(34, 8, 0, 0.4);
 
         width: 20em;
     }
@@ -416,6 +457,7 @@ $ratio in config.$fontsize {
 
     body {
         background-image: config.$imgbanner;
+        background-size: cover;
         background-attachment: fixed;
     }
 
@@ -432,13 +474,36 @@ $ratio in config.$fontsize {
         @include backgroundstyle("desktop", "light", true, false, false, true);
     }
 
-    .coloredsection {
-        @include backgroundstyle("desktop", "light", false, true, false, false)
+    .footer p {
+        font-size: 1em;
+    }
+
+    .prefooter,
+    .footer,
+    .coloredsection,
+    .articlesection {
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "large");
+
+    }
+
+    .containerarticle {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            width: 45%;
+        }
     }
 
     .coloredsection {
+        @include backgroundstyle("desktop", "light", false, true, false, false);
         flex-direction: row-reverse;
-        padding: map.get(config.$padding, "large") map.get(config.$padding, "large");
+
 
         svg {
             width: 7em;
@@ -447,13 +512,26 @@ $ratio in config.$fontsize {
 
     }
 
-    /*
-    .imgcoloredsection {
+    h1 {
+        font-size: 3.75em;
+        letter-spacing: 8px;
+    }
+
+    .dottedpipe::after {
+        content: "";
+        height: 10.5rem;
+        border-right: 1px dotted config.$secondary;
+        margin: 1rem;
+    }
+
+    .container {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
-    }*/
+        width: 100%;
+        flex-direction: row;
+    }
+
+
 
     .coloredsectiontext {
         min-width: 65%;
@@ -462,7 +540,7 @@ $ratio in config.$fontsize {
     }
 
     .intro {
-        padding: map.get(config.$padding, "medium") map.get(config.$padding, "x-large");
+        padding: map.get(config.$padding, "medium") map.get(config.$padding, "xx-large");
     }
 
 
@@ -470,6 +548,12 @@ $ratio in config.$fontsize {
         i {
             margin: 0 3rem;
             font-size: 4em;
+        }
+    }
+
+    .footer {
+        input {
+            width: 4em;
         }
     }
 
