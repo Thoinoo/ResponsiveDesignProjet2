@@ -4,7 +4,7 @@ $secondary: #7C8081;
 $secondarylight: #C9CDD0;
 $tertiary: #FFFFFF;
 $quaternay: #83D3C9;
-$quaternarylight:#AEE2DC;
+$quaternarylight: #AEE2DC;
 $fifth: #1C2021;
 
 
@@ -13,9 +13,21 @@ $defaultfontsize: 16px;
 
 $fontfamily: Calibri, Arial, sans-serif;
 
-$fontweight:("light":lighter, "medium": 500, "large": bolder);
-$fontsizescreen: ("smartphone": 2em, "desktop":5em);
-$fontsize:("h1":1.1, "h2":0.8, "h3":0.6, "p": 0.6);
+$fontweight: (
+    "light":lighter,
+    "medium": 500,
+    "large": bolder
+);
+$fontsizescreen: (
+    "smartphone": 2em,
+    "desktop":2.5em
+);
+$fontsize: (
+    "h1":1.1,
+    "h2":0.8,
+    "h3":0.6,
+    "p": 0.6
+);
 
 $defaultfontweight: lighter;
 
@@ -25,6 +37,25 @@ $transitionnavbar: 0.7s;
 $transitionbutton: 0.4s;
 $transitionsocial: 0.3s;
 $transitionheader: 3s;
+$transitionhref: 0.3s;
 
 //MARGIN & co
-$padding:("large": 5em, "medium":2em , "thin":1.8em);
+$padding: (
+    "xx-large":12em,
+    "x-large":9em,
+    "large": 5em,
+    "medium":2em,
+    "thin":1.8em
+);
+
+//
+$ornement: (
+    "smartphone": 11em,
+    "desktop": 26em
+);
+
+// Media
+$imgbanner: url("media/banner.jpg");
+
+//sidenav
+$sidenavwidth: 18rem;

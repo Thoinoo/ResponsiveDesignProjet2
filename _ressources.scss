@@ -32,7 +32,7 @@
 
 
 
-@mixin backgroundstyle( $color, $top, $bottom, $banner, $overlay) {
+@mixin backgroundstyle($width, $color, $top, $bottom, $banner, $overlay, ) {
     $tr:null;
     $tl:null;
     $br:null;
@@ -63,7 +63,7 @@
     { 
         $bgimage: $bgimage $tl , $tr; 
         $bgrepeat: $bgrepeat no-repeat, no-repeat ;
-        $bgsize: $bgsize 11em, 11em ;
+        $bgsize: $bgsize map.get(config.$ornement, $width) , map.get(config.$ornement, $width) ;
         $bgposition: $bgposition top left, top right;
     }
 
@@ -79,7 +79,7 @@
 
         $bgimage: $bgimage $br , $bl; 
         $bgrepeat: $bgrepeat no-repeat, no-repeat ;
-        $bgsize: $bgsize 11em, 11em ;
+        $bgsize: $bgsize map.get(config.$ornement, $width) , map.get(config.$ornement, $width) ;
         $bgposition: $bgposition bottom right, bottom left;
     }
 
@@ -108,7 +108,7 @@
             $bgposition: $bgposition unquote("\002C") ;
         }
 
-        $bgimage: $bgimage url("media/banner.jpg"); 
+        $bgimage: $bgimage config.$imgbanner; 
         $bgrepeat: $bgrepeat no-repeat ;
         $bgsize: $bgsize cover;
         $bgposition: $bgposition center;
@@ -127,6 +127,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    text-align: center;
+    
+}
+
+%flex-center-row
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 
     text-align: center;
     

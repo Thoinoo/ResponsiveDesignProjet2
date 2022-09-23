@@ -5,38 +5,43 @@
 
 
 
-
-
-a
-{
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    transition: 0.4s;
-    &:hover
-    {
-        text-decoration-color: rgb(0,0,0,0);
-        cursor: pointer;
-    }
-}
-
-
-.coloredsection, .checkmarksection, .articlesection
-{
-    p
-    {
-        text-align: justify;
-    }
-}
-
-html
-{
+html {
     overflow-x: hidden;
     font-size: config.$defaultfontsize;
     font-family: config.$fontfamily;
 }
 
-.imgcoloredsection
-{
+a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: config.$transitionhref;
+
+    &:hover {
+        text-decoration-color: rgb(0, 0, 0, 0);
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+.coloredsection,
+.checkmarksection,
+.articlesection {
+    p {
+        text-align: justify;
+    }
+}
+
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.imgcoloredsection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -44,8 +49,7 @@ html
 }
 
 
-h1
-{
+h1 {
     width: fit-content;
 
     letter-spacing: 3px;
@@ -54,27 +58,29 @@ h1
     border-bottom: 8px double config.$primary;
 }
 
-h2, h3
-{
+h2,
+h3 {
     letter-spacing: 1.5px;
 }
 
-p
-{
+p {
     letter-spacing: 1px;
 }
 
-.footer 
-{
+.flex-row {
+    @extend %flex-center-row;
+}
+
+.footer {
     background-color: config.$primary;
 
-    input
-    {   
+    input {
         margin: 0.2rem;
         width: 2.5rem;
 
         transition: config.$transitionsocial;
-        &:hover{
+
+        &:hover {
             -webkit-transform: translateY(-3px);
             transform: translateY(-3px);
             filter: brightness(115%);
@@ -82,69 +88,65 @@ p
     }
 }
 
-.headercontainer, .coloredsection, .prefooter
-{
+.headercontainer,
+.coloredsection,
+.prefooter {
     color: config.$tertiary;
 }
 
-.sectioncontainer
-{
-    @include backgroundstyle("dark",true,false,false,false);
+.sectioncontainer {
+    @include backgroundstyle("smartphone", "dark", true, false, false, false);
     background-color: config.$primary;
 }
 
-.header
-{
+.header {
     opacity: 0;
     @extend %flex-center-column;
 
     transition: config.$transitionheader;
 
-    h1, h3
-    {
+    h1,
+    h3 {
         cursor: default;
     }
 }
 
-.coloredsection
-{
+.coloredsection {
     background-color: config.$quaternay;
 }
 
-.coloredsection, .intro, .checkmarksection, .articlesection, .prefooter, .footer
-{
+.coloredsection,
+.intro,
+.checkmarksection,
+.articlesection,
+.prefooter,
+.footer {
     @extend %flex-center-column;
-    padding: map.get( config.$padding, "medium" ) map.get( config.$padding, "thin" ) ;
-    
+    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
+
 }
 
 
-.headercontainer
-{
-    @include backgroundstyle("light",false , true, true, true);
+.headercontainer {
+    @include backgroundstyle("smartphone", "light", false, true, true, true);
 }
 
-.prefooter
-{
-    @include backgroundstyle("light",true ,false ,true,true );
+.prefooter {
+    @include backgroundstyle("smartphone", "light", true, false, true, true);
 }
 
-.prefooter
-{
-    h2 
-    {
+.prefooter {
+    h2 {
         margin: auto 5rem;
     }
 }
 
-.headercontainer
-{
+.headercontainer {
     @extend %flex-center-column;
-    padding: map.get(config.$padding, "large") map.get(config.$padding, "medium") ;
+    padding: map.get(config.$padding, "large") map.get(config.$padding, "medium");
 }
 
-.main 
-{
+.main {
     left: 0;
 
     position: relative;
@@ -153,19 +155,14 @@ p
 
 }
 
-body
-{
-    margin: 0;
-    overflow-x: hidden;
-}
 
 
 
-.buttonnavbar
-{
+
+.buttonnavbar {
     top: 1em;
     left: 1em;
-    position: absolute ;
+    position: absolute;
 
     height: 2.5em;
     width: 3.5em;
@@ -173,7 +170,7 @@ body
     padding: 1em;
 
     color: config.$primary;
-    background-color: rgba(config.$secondary,0.8);
+    background-color: rgba(config.$secondary, 0.8);
 
     border-radius: 3px;
     border: 0;
@@ -181,8 +178,7 @@ body
     transition: config.$transitionnavbar;
 }
 
-.buttonnavbaricon
-{
+.buttonnavbaricon {
     position: absolute;
     top: 0.5rem;
     left: 1rem;
@@ -193,17 +189,15 @@ body
 
 }
 
-.buttonnavbarcontainer
-{
+.buttonnavbarcontainer {
     position: fixed;
 }
 
 
 
-.sidenav
-{
-    width: 90vw;
-    left: -90vw;
+.sidenav {
+    width: config.$sidenavwidth;
+    left: config.$sidenavwidth * -1;
 
     background-color: config.$fifth;
     height: 110%;
@@ -211,71 +205,92 @@ body
     top: -1.1em;
 
     transition: config.$transitionnavbar;
-    ul 
-    {
+
+    ul {
         list-style-type: none;
         padding-left: 1em;
-    }
-    li 
-    {
-        border-top: 0.5px solid rgba(config.$primary, 0.2);
-        padding: 0.5em;
+
 
     }
-    a
-    {
+
+    >ul {
+        position: relative;
+
+    }
+
+    li {
+        // padding: 0.5em;
+
+
+        &::before {
+            content: '';
+
+
+            left: 1em;
+
+            position: absolute;
+            width: 90%;
+            border-bottom: 1px solid config.$primary;
+            opacity: 0.1;
+        }
+
+    }
+
+    a {
+
+        display: block;
+        height: 2em;
+
         color: config.$primary;
         text-decoration: none;
+
     }
-    
+
 }
 
 
-.articlesection
-{
+.articlesection {
     background-color: config.$tertiary;
 
-    .article
-    {
+    .article {
         margin: 3em 0;
     }
-    img{
+
+    img {
         width: 100%;
     }
-    h2 
-    {
+
+    h2 {
         margin: 0;
     }
 }
 
-.coloredsection, .checkmarksection{
-    div 
-    {
-        margin: map.get(config.$padding, "thin") 0 ;
+.coloredsection,
+.checkmarksection {
+    div {
+        margin: map.get(config.$padding, "thin") 0;
     }
-   
+
 }
 
 
-.checkmarksection i
-{
+
+
+.checkmarksection i {
     color: config.$secondarylight;
 
-        font-size: 5em;
+    font-size: 5em;
 }
 
-.coloredsection 
-{
-    svg
-    {
+.coloredsection {
+    svg {
         fill: config.$quaternarylight;
         width: 5em;
         margin: 0.5em;
     }
 
-    div 
-    {
-        margin:0;
+    div {
+        margin: 0;
     }
 }
 
@@ -285,55 +300,179 @@ body
 
 
 // button($name, $background color , $border color , $text color, background color on hover )
-@include button("tertiary", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.1) ); 
-@include button("secondary", rgba(config.$secondary,0), config.$secondary , config.$secondary , rgba(config.$secondary,0.1) );
-@include button("quaternary", rgba(config.$quaternay,1), config.$quaternay , config.$primary , config.$quaternay );
-@include button("header", rgba(config.$tertiary,0), config.$tertiary , config.$tertiary , rgba(config.$tertiary,0.1) ); 
+@include button("tertiary", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
+@include button("secondary", rgba(config.$secondary, 0), config.$secondary , config.$secondary , rgba(config.$secondary, 0.1));
+@include button("quaternary", rgba(config.$quaternay, 1), config.$quaternay , config.$primary , config.$quaternay );
+@include button("header", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
 
 
-.button-quaternary:hover
-{
+.button-quaternary:hover {
     filter: brightness(1.075);
 }
 
-.button-header
-{
+.button-header {
     max-width: 13.5rem;
 }
 
-@each $name, $ratio in config.$fontsize {
-    #{$name} 
-    {
-        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio) ;
-        @if $name != "p" {
-            text-transform: uppercase;            
+@each $name,
+$ratio in config.$fontsize {
+    #{$name} {
+        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio);
+
+        @if $name  !="p" {
+            text-transform: uppercase;
         }
-        @if $name != "h1" {
-            font-weight: config.$defaultfontweight;            
+
+        @if $name  !="h1" {
+            font-weight: config.$defaultfontweight;
         }
     }
-    
-} 
 
-.intro, .checkmarksection, .articlesection, .footer
-{
+}
+
+.intro,
+.checkmarksection,
+.articlesection,
+.footer {
     color: config.$secondary;
 }
 
-.intro a
-{
-    color: config.$quaternay ;
+
+
+.line-decoration {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding-top: map.get(config.$padding, "thin");
+
+    width: 100%;
+
+    // height: 10vh;
+
+    &::before,
+    &::after {
+        display: inline-block;
+        border-top: 1px solid config.$secondarylight;
+        border-bottom: 1px solid config.$secondarylight;
+        height: 0.3rem;
+        content: '';
+        width: 100%;
+
+        opacity: 0.5;
+
+    }
+
+    i {
+
+        margin: 0 2rem;
+
+        font-size: 3em;
+
+        color: config.$secondarylight;
+
+
+    }
+
+}
+
+.intro {
+
+
+    a {
+        color: config.$quaternay ;
+    }
+
+
+
+
 }
 
 
 
-@media screen and (min-width: 769px)
-{
-    @each $name, $ratio in config.$fontsize {
-        #{$name} 
-        {
-            font-size: (map.get(config.$fontsizescreen,"desktop") * $ratio) ;
+@media screen and (min-width: 769px) {
+
+    @each $name,
+    $ratio in config.$fontsize {
+        #{$name} {
+            font-size: (map.get(config.$fontsizescreen, "desktop") * $ratio);
         }
-        
-    }   
+
+    }
+
+    .header {
+        padding: map.get(config.$padding, "thin") map.get(config.$padding, "thin");
+
+        background-color: rgba(0, 0, 0, 0.4);
+
+        width: 20em;
+    }
+
+    .buttonnavbarcontainer {
+        display: none;
+    }
+
+    body {
+        background-image: config.$imgbanner;
+        background-attachment: fixed;
+    }
+
+    .headercontainer {
+        @include backgroundstyle("desktop", "light", false, true, false, true);
+    }
+
+    .sectioncontainer {
+        @include backgroundstyle("desktop", "dark", true, true, false, false);
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
+    }
+
+    .prefooter {
+        @include backgroundstyle("desktop", "light", true, false, false, true);
+    }
+
+    .coloredsection {
+        @include backgroundstyle("desktop", "light", false, true, false, false)
+    }
+
+    .coloredsection {
+        flex-direction: row-reverse;
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "large");
+
+        svg {
+            width: 7em;
+            padding: 0.5em;
+        }
+
+    }
+
+    /*
+    .imgcoloredsection {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }*/
+
+    .coloredsectiontext {
+        min-width: 65%;
+        max-width: 65%;
+        text-align: left;
+    }
+
+    .intro {
+        padding: map.get(config.$padding, "medium") map.get(config.$padding, "x-large");
+    }
+
+
+    .line-decoration {
+        i {
+            margin: 0 3rem;
+            font-size: 4em;
+        }
+    }
+
+
+
 }
