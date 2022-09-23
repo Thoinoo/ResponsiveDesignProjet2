@@ -209,7 +209,7 @@ p {
     background-color: config.$fifth;
     height: 110%;
     position: fixed;
-    top: -1.1em;
+    top: -1em;
 
     transition: config.$transitionnavbar;
 
@@ -220,18 +220,15 @@ p {
 
     }
 
-    >ul {
-        position: relative;
 
-    }
 
     li {
         // padding: 0.5em;
 
 
         &::before {
-            content: '';
 
+            content: '';
 
             left: 1em;
 
@@ -243,13 +240,20 @@ p {
 
     }
 
+    >ul>li>a {
+        font-weight: map.get(config.$fontweight, "large");
+    }
+
     a {
+        font-size: 1.1em;
 
-        display: block;
-        height: 2em;
 
-        color: config.$primary;
+        color: config.$secondarylightbutnotthatmuch;
         text-decoration: none;
+
+        height: 2.4em;
+        display: flex;
+        align-items: center;
 
     }
 

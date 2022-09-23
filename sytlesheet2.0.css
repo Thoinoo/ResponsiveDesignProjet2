@@ -182,15 +182,12 @@ p {
   background-color: #1C2021;
   height: 110%;
   position: fixed;
-  top: -1.1em;
+  top: -1em;
   transition: 0.7s;
 }
 .sidenav ul {
   list-style-type: none;
   padding-left: 1em;
-}
-.sidenav > ul {
-  position: relative;
 }
 .sidenav li::before {
   content: "";
@@ -200,11 +197,16 @@ p {
   border-bottom: 1px solid #F3F6FA;
   opacity: 0.1;
 }
+.sidenav > ul > li > a {
+  font-weight: bolder;
+}
 .sidenav a {
-  display: block;
-  height: 2em;
-  color: #F3F6FA;
+  font-size: 1.1em;
+  color: #C6C7C7;
   text-decoration: none;
+  height: 2.4em;
+  display: flex;
+  align-items: center;
 }
 
 .articlesection {
