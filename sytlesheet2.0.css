@@ -21,6 +21,7 @@ a:hover {
 }
 
 html {
+  overflow-x: hidden;
   font-size: 16px;
   font-family: Calibri, Arial, sans-serif;
 }
@@ -66,6 +67,10 @@ p {
 }
 
 .sectioncontainer {
+  background-image: url("media/background/dark-tl.svg"), url("media/background/dark-tr.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 11em, 11em;
+  background-position: top left, top right;
   background-color: #F3F6FA;
 }
 
@@ -85,11 +90,18 @@ p {
   padding: 2em 1.8em;
 }
 
-.headercontainer, .prefooter {
-  background-image: url("media/banner.jpg");
-  background-repeat: no;
-  background-size: cover;
-  background-position: center;
+.headercontainer {
+  background-image: url("media/background/light-br.svg"), url("media/background/light-bl.svg") , url("media/background/overlay.png") , url("media/banner.jpg");
+  background-repeat: no-repeat, no-repeat , repeat , no-repeat;
+  background-size: 11em, 11em , 15em , cover;
+  background-position: bottom right, bottom left , center , center;
+}
+
+.prefooter {
+  background-image: url("media/background/light-tl.svg"), url("media/background/light-tr.svg") , url("media/background/overlay.png") , url("media/banner.jpg");
+  background-repeat: no-repeat, no-repeat , repeat , no-repeat;
+  background-size: 11em, 11em , 15em , cover;
+  background-position: top left, top right , center , center;
 }
 
 .prefooter h2 {
@@ -175,9 +187,19 @@ body {
 .coloredsection div, .checkmarksection div {
   margin: 1.8em 0;
 }
-.coloredsection img, .checkmarksection img {
-  max-width: 5em;
+
+.checkmarksection i {
+  color: #C9CDD0;
+  font-size: 5em;
+}
+
+.coloredsection svg {
+  fill: #AEE2DC;
+  width: 5em;
   margin: 0.5em;
+}
+.coloredsection div {
+  margin: 0;
 }
 
 .button-tertiary {

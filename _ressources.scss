@@ -29,6 +29,98 @@
     }
 }
 
+
+
+
+@mixin backgroundstyle( $color, $top, $bottom, $banner, $overlay) {
+    $tr:null;
+    $tl:null;
+    $br:null;
+    $bl:null;
+    $bgimage:null;
+    $bgrepeat:null;
+    $bgsize:null;
+    $bgposition:null;
+
+
+    @if $color == "light"
+    {
+        $tr: url("media/background/light-tr.svg");
+        $tl: url("media/background/light-tl.svg");
+        $br: url("media/background/light-br.svg");
+        $bl: url("media/background/light-bl.svg");
+    }
+    @if $color == "dark"
+    {
+        $tr: url("media/background/dark-tr.svg");
+        $tl: url("media/background/dark-tl.svg");
+        $br: url("media/background/dark-br.svg");
+        $bl: url("media/background/dark-bl.svg");
+    }
+
+    
+    @if $top 
+    { 
+        $bgimage: $bgimage $tl , $tr; 
+        $bgrepeat: $bgrepeat no-repeat, no-repeat ;
+        $bgsize: $bgsize 11em, 11em ;
+        $bgposition: $bgposition top left, top right;
+    }
+
+    @if $bottom 
+    { 
+        @if  $top
+        {
+            $bgimage: $bgimage unquote("\002C")  ; 
+            $bgrepeat:  $bgrepeat unquote("\002C") ;
+            $bgsize: $bgsize unquote("\002C") ;
+            $bgposition: $bgposition unquote("\002C") ;
+        }
+
+        $bgimage: $bgimage $br , $bl; 
+        $bgrepeat: $bgrepeat no-repeat, no-repeat ;
+        $bgsize: $bgsize 11em, 11em ;
+        $bgposition: $bgposition bottom right, bottom left;
+    }
+
+    @if $overlay 
+    { 
+        @if $top or $bottom
+        {
+            $bgimage: $bgimage unquote("\002C")  ; 
+            $bgrepeat:  $bgrepeat unquote("\002C") ;
+            $bgsize: $bgsize unquote("\002C") ;
+            $bgposition: $bgposition unquote("\002C") ;
+        }
+        $bgimage: $bgimage url("media/background/overlay.png"); 
+        $bgrepeat: $bgrepeat repeat ;
+        $bgsize: $bgsize 15em;
+        $bgposition: $bgposition center;
+    }
+    
+    @if $banner 
+    { 
+        @if $top or $bottom or $overlay
+        {
+            $bgimage: $bgimage unquote("\002C")  ; 
+            $bgrepeat:  $bgrepeat unquote("\002C") ;
+            $bgsize: $bgsize unquote("\002C") ;
+            $bgposition: $bgposition unquote("\002C") ;
+        }
+
+        $bgimage: $bgimage url("media/banner.jpg"); 
+        $bgrepeat: $bgrepeat no-repeat ;
+        $bgsize: $bgsize cover;
+        $bgposition: $bgposition center;
+    }
+
+    background-image: $bgimage;
+    background-repeat: $bgrepeat;
+    background-size: $bgsize;
+    background-position: $bgposition;
+    
+}
+
 %flex-center-column
 {
     display: flex;

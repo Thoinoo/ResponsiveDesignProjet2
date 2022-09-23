@@ -30,6 +30,7 @@ a
 
 html
 {
+    overflow-x: hidden;
     font-size: config.$defaultfontsize;
     font-family: config.$fontfamily;
 }
@@ -88,6 +89,7 @@ p
 
 .sectioncontainer
 {
+    @include backgroundstyle("dark",true,false,false,false);
     background-color: config.$primary;
 }
 
@@ -116,12 +118,15 @@ p
     
 }
 
-.headercontainer, .prefooter
+
+.headercontainer
 {
-    background-image: url("media/banner.jpg");
-    background-repeat: no;
-    background-size: cover;
-    background-position: center;
+    @include backgroundstyle("light",false , true, true, true);
+}
+
+.prefooter
+{
+    @include backgroundstyle("light",true ,false ,true,true );
 }
 
 .prefooter
@@ -248,9 +253,29 @@ body
     {
         margin: map.get(config.$padding, "thin") 0 ;
     }
-    img{
-        max-width: 5em;
+   
+}
+
+
+.checkmarksection i
+{
+    color: config.$secondarylight;
+
+        font-size: 5em;
+}
+
+.coloredsection 
+{
+    svg
+    {
+        fill: config.$quaternarylight;
+        width: 5em;
         margin: 0.5em;
+    }
+
+    div 
+    {
+        margin:0;
     }
 }
 
