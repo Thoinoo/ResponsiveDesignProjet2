@@ -127,7 +127,7 @@ a {
     background-color: config.$fifth;
     height: 110%;
     position: fixed;
-    top: -1em;
+    top: -3.56em;
 
     transition: config.$transitionnavbar;
 
@@ -159,23 +159,32 @@ a {
     }
 
     >ul>li>a {
-        font-weight: map.get(config.$fontweight, "large");
+        font-weight: map.get(config.$fontweight, "x-large");
     }
 
     a {
-        font-size: 1.1em;
+        font-size: 0.9em;
+        font-weight: 100;
 
 
         color: config.$secondarylightbutnotthatmuch;
         text-decoration: none;
 
-        height: 2.4em;
+        height: 2.8em;
         display: flex;
         align-items: center;
 
+        transition: config.$transitionnavbar;
+
+    }
+
+    .homebutton {
+        visibility: hidden;
     }
 
 }
+
+
 
 .headercontainer {
     @include backgroundstyle("smartphone", "light", false, true, true, true);
@@ -373,6 +382,8 @@ a {
 }
 
 
+
+
 @media screen and (min-width: 769px) {
 
 
@@ -392,17 +403,90 @@ a {
     }
 
     h1 {
-        font-size: 3.75em;
+        font-size: 3.4em;
         letter-spacing: 8px;
     }
 
-    p {
-        font-size: 1.3em;
+
+
+    .sidenav {
+
+        position: absolute;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 10%;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        background-color: rgba(0, 0, 0, 0);
+
+
+
+
+        >ul {
+            display: flex;
+            flex-direction: row;
+
+
+
+            padding-right: 2em;
+        }
+
+        >ul>li {
+            margin: 0 1em;
+        }
+
+        >ul>ul {
+            position: absolute;
+            top: 4em;
+            right: 4em;
+
+            visibility: hidden;
+
+            background-color: config.$primary;
+
+        }
+
+        >ul>ul>ul {
+            position: absolute;
+            visibility: hidden;
+        }
+
+
+        li::before {
+            display: none;
+        }
+
+        .homebutton {
+            visibility: visible;
+            padding-left: 2em;
+            text-transform: uppercase;
+
+        }
+
+        ul,
+        a {
+            transition: config.$transitionnavbar;
+        }
+
     }
 
     .buttonnavbarcontainer {
         display: none;
     }
+
+    .main {
+        position: static;
+    }
+
+
+
 
     .headercontainer {
         @include backgroundstyle("desktop", "light", false, true, false, true);
