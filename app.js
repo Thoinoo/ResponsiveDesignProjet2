@@ -45,14 +45,18 @@ function displaylayouts() {
   document.getElementById("menulayouts").style.visibility = "visible";
 }
 function hidelayouts() {
-  document.getElementById("menulayouts").style.visibility = "hidden";
+  if (window.screen.width > 769) {
+    document.getElementById("menulayouts").style.visibility = "hidden";
+  }
 }
 
 function displaysubmenu() {
   document.getElementById("menusubmenu").style.visibility = "visible";
 }
 function hidesubmenu() {
-  document.getElementById("menusubmenu").style.visibility = "hidden";
+  if (window.screen.width > 769) {
+    document.getElementById("menusubmenu").style.visibility = "hidden";
+  }
 }
 
 document.getElementById("buttonlayouts").addEventListener("mouseover", displaylayouts);

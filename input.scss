@@ -27,6 +27,8 @@ $ratio in config.$fontsize {
     }
 }
 
+
+
 h1,
 h2,
 h3 {
@@ -135,7 +137,6 @@ a {
         list-style-type: none;
         padding-left: 1em;
 
-
     }
 
 
@@ -157,6 +158,7 @@ a {
         }
 
     }
+
 
     >ul>li>a {
         font-weight: map.get(config.$fontweight, "x-large");
@@ -182,7 +184,11 @@ a {
         visibility: hidden;
     }
 
+
+
 }
+
+
 
 
 
@@ -256,7 +262,7 @@ a {
     padding-top: map.get(config.$padding, "x-thin");
 
     a {
-        color: config.$quaternay ;
+        color: config.$quaternary ;
     }
 }
 
@@ -286,7 +292,7 @@ a {
 
 
 .coloredsection {
-    background-color: config.$quaternay;
+    background-color: config.$quaternary;
 }
 
 .imgcoloredsection {
@@ -346,7 +352,7 @@ a {
 // button($name, $background color , $border color , $text color, background color on hover )
 @include button("tertiary", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
 @include button("secondary", rgba(config.$secondary, 0), config.$secondary , config.$secondary , rgba(config.$secondary, 0.1));
-@include button("quaternary", rgba(config.$quaternay, 1), config.$quaternay , config.$primary , config.$quaternay );
+@include button("quaternary", rgba(config.$quaternary, 1), config.$quaternary , config.$primary , config.$quaternary );
 @include button("header", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
 
 
@@ -384,6 +390,7 @@ a {
 
 
 
+
 @media screen and (min-width: 769px) {
 
 
@@ -395,6 +402,8 @@ a {
         }
 
     }
+
+
 
     body {
         background-image: config.$imgbanner;
@@ -427,40 +436,69 @@ a {
         background-color: rgba(0, 0, 0, 0);
 
 
-
+        ul {
+            padding: 0;
+        }
 
         >ul {
+            width: 100%;
             display: flex;
             flex-direction: row;
+            justify-content: end;
 
 
 
-            padding-right: 2em;
         }
 
         >ul>li {
-            margin: 0 1em;
+            margin: 0 2em;
+        }
+
+        >ul>li>a {
+            .weight-x-large {
+                font-weight: 900;
+            }
+
+            .weight-light {
+                font-weight: 100;
+            }
         }
 
         >ul>ul {
+
             position: absolute;
             top: 4em;
-            right: 4em;
+            right: 8em;
 
             visibility: hidden;
 
-            background-color: config.$primary;
+            background-color: config.$tertiary;
+            color: #444747;
 
+        }
+
+
+        >ul>ul>li>a,
+        >ul>ul>ul>li>a {
+            color: config.$secondary;
         }
 
         >ul>ul>ul {
+            background-color: config.$tertiary;
+
             position: absolute;
+            width: 9em;
+
+            right: 8.5em;
+            top: 9em;
             visibility: hidden;
         }
 
 
-        li::before {
-            display: none;
+        li {
+            &::before {
+                display: none;
+            }
         }
 
         .homebutton {
@@ -468,14 +506,76 @@ a {
             padding-left: 2em;
             text-transform: uppercase;
 
+            display: flex;
+            justify-content: start;
+
         }
+
+        a {
+
+
+            height: 2em;
+            width: 100%;
+
+
+        }
+
+
 
         ul,
         a {
-            transition: config.$transitionnavbar;
+            transition: 0.1s;
+        }
+
+        .btn-nav-tertiary-bold {
+            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "bold");
+        }
+
+        .btn-nav-tertiary-light {
+            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "light");
+        }
+
+        .btn-nav-quaternary-bold {
+            @include buttonNavbar(config.$quaternary, true, rgba(config.$quaternary, 1), config.$primary, rgba(config.$quaternary, 1), "bold");
+        }
+
+        >ul ul {
+            padding: 1em 0;
+            width: 9em;
+        }
+
+
+    }
+
+    .btn-nav-quaternary-bold:hover {
+        filter: brightness(1.075);
+    }
+
+
+
+
+
+
+
+
+    .whitespace {
+        padding: 0.2em 1em;
+
+        background-color: config.$tertiary;
+        height: fit-content;
+
+        border-bottom: 1px solid black;
+
+        &:hover {
+            background-color: config.$quaternary;
         }
 
     }
+
+    .no-border-bot {
+        border: 0px;
+    }
+
 
     .buttonnavbarcontainer {
         display: none;
@@ -592,5 +692,9 @@ a {
         width: 100%;
         flex-direction: row;
     }
+
+
+
+
 
 }

@@ -1,8 +1,5 @@
-
-@mixin button($name, $background, $border, $text, $hover)
-{
-    .button-#{$name}
-    {
+@mixin button($name, $background, $border, $text, $hover) {
+    .button-#{$name} {
         text-align: center;
 
         background-color: $background;
@@ -10,9 +7,9 @@
         color: $text;
 
         font-size: config.$defaultfontsize;
-        font-weight: map.get( config.$fontweight,"large" ) ;
+        font-weight: map.get(config.$fontweight, "large");
 
-        
+
         width: 100%;
         max-width: 17rem;
 
@@ -21,95 +18,134 @@
         margin: 0.5rem;
 
         transition: 0.3s;
-        &:hover
-        {
+
+        &:hover {
             background-color: $hover;
             cursor: pointer;
         }
     }
 }
 
+@mixin buttonNavbar($border, $displayborder, $background , $text, $hover, $weight) {
+    text-align: center;
+
+    background-color: $background;
+
+    @if $displayborder {
+
+        border: 1px solid $border;
+    }
+
+    @else {
+        border: 1px solid rgba($border, 0);
+    }
+
+    @if $weight =="bold" {
+        font-weight: 900;
+    }
+
+    @if $weight =="light" {
+        font-weight: 100;
+    }
+
+    color: $text;
+
+    font-size: config.$defaultfontsize;
+
+    padding: 0.1em 0.4em;
+
+
+    &:hover {
+        background-color: $hover;
+        border: 1px solid $border;
+        cursor: pointer;
+
+    }
+
+}
+
 
 
 
 @mixin backgroundstyle($width, $color, $top, $bottom, $banner, $overlay, ) {
-    $tr:null;
-    $tl:null;
-    $br:null;
-    $bl:null;
-    $bgimage:null;
-    $bgrepeat:null;
-    $bgsize:null;
-    $bgposition:null;
+    $tr: null;
+    $tl: null;
+    $br: null;
+    $bl: null;
+    $bgimage: null;
+    $bgrepeat: null;
+    $bgsize: null;
+    $bgposition: null;
 
 
-    @if $color == "light"
-    {
+    @if $color =="light"
+
+        {
         $tr: url("media/background/light-tr.svg");
         $tl: url("media/background/light-tl.svg");
         $br: url("media/background/light-br.svg");
         $bl: url("media/background/light-bl.svg");
     }
-    @if $color == "dark"
-    {
+
+    @if $color =="dark"
+
+        {
         $tr: url("media/background/dark-tr.svg");
         $tl: url("media/background/dark-tl.svg");
         $br: url("media/background/dark-br.svg");
         $bl: url("media/background/dark-bl.svg");
     }
 
-    
-    @if $top 
-    { 
-        $bgimage: $bgimage $tl , $tr; 
-        $bgrepeat: $bgrepeat no-repeat, no-repeat ;
-        $bgsize: $bgsize map.get(config.$ornement, $width) , map.get(config.$ornement, $width) ;
-        $bgposition: $bgposition top left, top right;
+
+    @if $top {
+        $bgimage: $bgimage $tl ,
+        $tr;
+        $bgrepeat: $bgrepeat no-repeat,
+        no-repeat;
+        $bgsize: $bgsize map.get(config.$ornement, $width),
+        map.get(config.$ornement, $width);
+        $bgposition: $bgposition top left,
+        top right;
     }
 
-    @if $bottom 
-    { 
-        @if  $top
-        {
-            $bgimage: $bgimage unquote("\002C")  ; 
-            $bgrepeat:  $bgrepeat unquote("\002C") ;
-            $bgsize: $bgsize unquote("\002C") ;
-            $bgposition: $bgposition unquote("\002C") ;
+    @if $bottom {
+        @if $top {
+            $bgimage: $bgimage unquote("\002C");
+            $bgrepeat: $bgrepeat unquote("\002C");
+            $bgsize: $bgsize unquote("\002C");
+            $bgposition: $bgposition unquote("\002C");
         }
 
-        $bgimage: $bgimage $br , $bl; 
-        $bgrepeat: $bgrepeat no-repeat, no-repeat ;
-        $bgsize: $bgsize map.get(config.$ornement, $width) , map.get(config.$ornement, $width) ;
+        $bgimage: $bgimage $br , $bl;
+        $bgrepeat: $bgrepeat no-repeat, no-repeat;
+        $bgsize: $bgsize map.get(config.$ornement, $width), map.get(config.$ornement, $width);
         $bgposition: $bgposition bottom right, bottom left;
     }
 
-    @if $overlay 
-    { 
-        @if $top or $bottom
-        {
-            $bgimage: $bgimage unquote("\002C")  ; 
-            $bgrepeat:  $bgrepeat unquote("\002C") ;
-            $bgsize: $bgsize unquote("\002C") ;
-            $bgposition: $bgposition unquote("\002C") ;
+    @if $overlay {
+        @if $top or $bottom {
+            $bgimage: $bgimage unquote("\002C");
+            $bgrepeat: $bgrepeat unquote("\002C");
+            $bgsize: $bgsize unquote("\002C");
+            $bgposition: $bgposition unquote("\002C");
         }
-        $bgimage: $bgimage url("media/background/overlay.png"); 
-        $bgrepeat: $bgrepeat repeat ;
+
+        $bgimage: $bgimage url("media/background/overlay.png");
+        $bgrepeat: $bgrepeat repeat;
         $bgsize: $bgsize 15em;
         $bgposition: $bgposition center;
     }
-    
-    @if $banner 
-    { 
-        @if $top or $bottom or $overlay
-        {
-            $bgimage: $bgimage unquote("\002C")  ; 
-            $bgrepeat:  $bgrepeat unquote("\002C") ;
-            $bgsize: $bgsize unquote("\002C") ;
-            $bgposition: $bgposition unquote("\002C") ;
+
+    @if $banner {
+        @if $top or $bottom or $overlay {
+            $bgimage: $bgimage unquote("\002C");
+            $bgrepeat: $bgrepeat unquote("\002C");
+            $bgsize: $bgsize unquote("\002C");
+            $bgposition: $bgposition unquote("\002C");
         }
 
-        $bgimage: $bgimage config.$imgbanner; 
-        $bgrepeat: $bgrepeat no-repeat ;
+        $bgimage: $bgimage config.$imgbanner;
+        $bgrepeat: $bgrepeat no-repeat;
         $bgsize: $bgsize cover;
         $bgposition: $bgposition center;
     }
@@ -118,27 +154,25 @@
     background-repeat: $bgrepeat;
     background-size: $bgsize;
     background-position: $bgposition;
-    
+
 }
 
-%flex-center-column
-{
+%flex-center-column {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     text-align: center;
-    
+
 }
 
-%flex-center-row
-{
+%flex-center-row {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 
     text-align: center;
-    
+
 }

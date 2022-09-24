@@ -104,7 +104,7 @@ a:hover {
   width: 3.5em;
   padding: 1em;
   color: #F3F6FA;
-  background-color: rgba(124, 128, 129, 0.8);
+  background-color: rgba(88, 91, 92, 0.8);
   border-radius: 3px;
   border: 0;
   transition: 0.7s;
@@ -187,7 +187,7 @@ a:hover {
 .checkmarksection,
 .articlesection,
 .footer {
-  color: #7C8081;
+  color: #585b5c;
 }
 
 .line-decoration {
@@ -309,9 +309,9 @@ a:hover {
 
 .button-secondary {
   text-align: center;
-  background-color: rgba(124, 128, 129, 0);
-  border: 1px solid #7C8081;
-  color: #7C8081;
+  background-color: rgba(88, 91, 92, 0);
+  border: 1px solid #585b5c;
+  color: #585b5c;
   font-size: 16px;
   font-weight: bolder;
   width: 100%;
@@ -321,7 +321,7 @@ a:hover {
   transition: 0.3s;
 }
 .button-secondary:hover {
-  background-color: rgba(124, 128, 129, 0.1);
+  background-color: rgba(88, 91, 92, 0.1);
   cursor: pointer;
 }
 
@@ -421,23 +421,42 @@ a:hover {
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
   }
+  .sidenav ul {
+    padding: 0;
+  }
   .sidenav > ul {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    padding-right: 2em;
+    justify-content: end;
   }
   .sidenav > ul > li {
-    margin: 0 1em;
+    margin: 0 2em;
+  }
+  .sidenav > ul > li > a .weight-x-large {
+    font-weight: 900;
+  }
+  .sidenav > ul > li > a .weight-light {
+    font-weight: 100;
   }
   .sidenav > ul > ul {
     position: absolute;
     top: 4em;
-    right: 4em;
+    right: 8em;
     visibility: hidden;
-    background-color: #F3F6FA;
+    background-color: #FFFFFF;
+    color: #444747;
+  }
+  .sidenav > ul > ul > li > a,
+.sidenav > ul > ul > ul > li > a {
+    color: #585b5c;
   }
   .sidenav > ul > ul > ul {
+    background-color: #FFFFFF;
     position: absolute;
+    width: 9em;
+    right: 8.5em;
+    top: 9em;
     visibility: hidden;
   }
   .sidenav li::before {
@@ -447,10 +466,77 @@ a:hover {
     visibility: visible;
     padding-left: 2em;
     text-transform: uppercase;
+    display: flex;
+    justify-content: start;
+  }
+  .sidenav a {
+    height: 2em;
+    width: 100%;
   }
   .sidenav ul,
 .sidenav a {
-    transition: 0.7s;
+    transition: 0.1s;
+  }
+  .sidenav .btn-nav-tertiary-bold {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0.1em 0.4em;
+  }
+  .sidenav .btn-nav-tertiary-bold:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
+  .sidenav .btn-nav-tertiary-light {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0);
+    font-weight: 100;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 0.1em 0.4em;
+  }
+  .sidenav .btn-nav-tertiary-light:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+  }
+  .sidenav .btn-nav-quaternary-bold {
+    text-align: center;
+    background-color: #83d3c9;
+    border: 1px solid #83D3C9;
+    font-weight: 900;
+    color: #F3F6FA;
+    font-size: 16px;
+    padding: 0.1em 0.4em;
+  }
+  .sidenav .btn-nav-quaternary-bold:hover {
+    background-color: #83d3c9;
+    border: 1px solid #83D3C9;
+    cursor: pointer;
+  }
+  .sidenav > ul ul {
+    padding: 1em 0;
+    width: 9em;
+  }
+  .btn-nav-quaternary-bold:hover {
+    filter: brightness(1.075);
+  }
+  .whitespace {
+    padding: 0.2em 1em;
+    background-color: #FFFFFF;
+    height: fit-content;
+    border-bottom: 1px solid black;
+  }
+  .whitespace:hover {
+    background-color: #83D3C9;
+  }
+  .no-border-bot {
+    border: 0px;
   }
   .buttonnavbarcontainer {
     display: none;
@@ -539,7 +625,7 @@ a:hover {
   .dottedpipe::after {
     content: "";
     height: 10.5rem;
-    border-right: 1px dotted #7C8081;
+    border-right: 1px dotted #585b5c;
     margin: 1rem;
   }
   .container {
