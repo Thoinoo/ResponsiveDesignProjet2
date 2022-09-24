@@ -12,22 +12,23 @@ $fifth: #1C2021;
 //FONTS
 $defaultfontsize: 16px;
 
-$fontfamily: Calibri, Arial, sans-serif;
+$fontfamily: 'lato', sans-serif;
 
 $fontweight: (
     "light":lighter,
     "medium": 500,
-    "large": bolder
+    "large": bolder,
+    "x-large": 900
 );
 $fontsizescreen: (
-    "smartphone": 2em,
+    "smartphone": 1.5em,
     "desktop":2.5em
 );
 $fontsize: (
     "h1":1.1,
-    "h2":0.9,
-    "h3":0.6,
-    "p": 0.6
+    "h2":0.95,
+    "h3":0.7,
+    "p": 0.7
 );
 
 $defaultfontweight: lighter;
@@ -45,8 +46,9 @@ $padding: (
     "xx-large":12em,
     "x-large":9em,
     "large": 5em,
-    "medium":2em,
-    "thin":1.8em
+    "medium":3em,
+    "thin":1.8em,
+    "x-thin":1em
 );
 
 //

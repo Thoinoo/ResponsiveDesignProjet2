@@ -9,6 +9,61 @@ html {
     overflow-x: hidden;
     font-size: config.$defaultfontsize;
     font-family: config.$fontfamily;
+
+    input {
+        font-family: 'lato', sans-serif;
+    }
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@each $name,
+$ratio in config.$fontsize {
+    #{$name} {
+        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio);
+    }
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    padding: 0.2em 0;
+
+    font-weight: map.get(config.$fontweight, "x-large");
+    letter-spacing: 4px;
+
+    width: fit-content;
+    border-top: 7px double config.$primary;
+    border-bottom: 7px double config.$primary;
+
+
+
+}
+
+h2,
+h3 {
+    letter-spacing: 1.5px;
+    line-height: 1.4em;
+}
+
+p {
+    letter-spacing: 1px;
+    line-height: 1.4em;
+}
+
+
+
+p,
+h2,
+h3 {
+    font-weight: lighter;
 }
 
 a {
@@ -22,137 +77,6 @@ a {
     }
 }
 
-
-
-.coloredsection,
-.checkmarksection,
-.articlesection {
-    p {
-        text-align: justify;
-    }
-}
-
-
-
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
-
-.imgcoloredsection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-h1 {
-
-
-
-    letter-spacing: 5px;
-
-    border-top: 8px double config.$primary;
-    border-bottom: 8px double config.$primary;
-
-
-    width: fit-content;
-
-    letter-spacing: 3px;
-
-    border-top: 8px double config.$primary;
-    border-bottom: 8px double config.$primary;
-}
-
-h2,
-h3 {
-    letter-spacing: 1.5px;
-}
-
-p {
-    letter-spacing: 1px;
-}
-
-.flex-row {
-    @extend %flex-center-row;
-}
-
-.footer {
-    background-color: config.$primary;
-
-    input {
-        margin: 0.2rem;
-        width: 2.5rem;
-
-        transition: config.$transitionsocial;
-
-        &:hover {
-            -webkit-transform: translateY(-3px);
-            transform: translateY(-3px);
-            filter: brightness(115%);
-        }
-    }
-}
-
-.headercontainer,
-.coloredsection,
-.prefooter {
-    color: config.$tertiary;
-}
-
-.sectioncontainer {
-    @include backgroundstyle("smartphone", "dark", true, false, false, false);
-    background-color: config.$primary;
-}
-
-.header {
-    opacity: 0;
-    @extend %flex-center-column;
-
-    transition: config.$transitionheader;
-
-    h1,
-    h3 {
-        cursor: default;
-    }
-}
-
-.coloredsection {
-    background-color: config.$quaternay;
-}
-
-.coloredsection,
-.intro,
-.checkmarksection,
-.articlesection,
-.prefooter,
-.footer {
-    @extend %flex-center-column;
-    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
-
-}
-
-
-.headercontainer {
-    @include backgroundstyle("smartphone", "light", false, true, true, true);
-}
-
-.prefooter {
-    @include backgroundstyle("smartphone", "light", true, false, true, true);
-}
-
-.prefooter {
-    h2 {
-        margin: auto 5rem;
-    }
-}
-
-.headercontainer {
-    @extend %flex-center-column;
-    padding: map.get(config.$padding, "large") map.get(config.$padding, "medium");
-}
-
 .main {
     left: 0;
 
@@ -161,9 +85,6 @@ p {
     transition: config.$transitionnavbar;
 
 }
-
-
-
 
 
 .buttonnavbar {
@@ -193,14 +114,11 @@ p {
     width: 0.9rem;
 
     fill: config.$primary;
-
 }
 
 .buttonnavbarcontainer {
     position: fixed;
 }
-
-
 
 .sidenav {
     width: config.$sidenavwidth;
@@ -259,6 +177,120 @@ p {
 
 }
 
+.headercontainer {
+    @include backgroundstyle("smartphone", "light", false, true, true, true);
+    @extend %flex-center-column;
+    padding: map.get(config.$padding, "large") map.get(config.$padding, "medium");
+}
+
+.header {
+    opacity: 0;
+    @extend %flex-center-column;
+
+    transition: config.$transitionheader;
+
+    h1,
+    h3 {
+        cursor: default;
+    }
+}
+
+.headercontainer,
+.coloredsection,
+.prefooter {
+    color: config.$tertiary;
+}
+
+.intro,
+.checkmarksection,
+.articlesection,
+.footer {
+    color: config.$secondary;
+}
+
+
+.line-decoration {
+    @extend %flex-center-row;
+
+    padding-top: map.get(config.$padding, "medium");
+
+    width: 100%;
+
+    // height: 10vh;
+
+    &::before,
+    &::after {
+        display: inline-block;
+        border-top: 1px solid config.$secondarylight;
+        border-bottom: 1px solid config.$secondarylight;
+        height: 0.3rem;
+        content: '';
+        width: 100%;
+
+        opacity: 0.5;
+
+    }
+
+    i {
+        margin: 0 2rem;
+
+        font-size: 3em;
+
+        color: config.$secondarylight;
+    }
+
+}
+
+.intro {
+    @extend %flex-center-column;
+    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
+    padding-top: map.get(config.$padding, "x-thin");
+
+    a {
+        color: config.$quaternay ;
+    }
+}
+
+.sectioncontainer {
+    @include backgroundstyle("smartphone", "dark", true, false, false, false);
+    background-color: config.$primary;
+}
+
+.coloredsection,
+.checkmarksection,
+.articlesection {
+    p {
+        text-align: justify;
+    }
+}
+
+.coloredsection,
+.checkmarksection,
+.articlesection,
+.prefooter,
+.footer {
+    @extend %flex-center-column;
+    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
+
+}
+
+
+
+.coloredsection {
+    background-color: config.$quaternay;
+}
+
+.imgcoloredsection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prefooter {
+    @include backgroundstyle("smartphone", "light", true, false, true, true);
+}
+
 
 .articlesection {
     background-color: config.$tertiary;
@@ -284,9 +316,6 @@ p {
 
 }
 
-
-
-
 .checkmarksection i {
     color: config.$secondarylight;
 
@@ -305,11 +334,6 @@ p {
     }
 }
 
-
-
-
-
-
 // button($name, $background color , $border color , $text color, background color on hover )
 @include button("tertiary", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
 @include button("secondary", rgba(config.$secondary, 0), config.$secondary , config.$secondary , rgba(config.$secondary, 0.1));
@@ -325,93 +349,28 @@ p {
     max-width: 13.5rem;
 }
 
-@each $name,
-$ratio in config.$fontsize {
-    #{$name} {
-        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio);
 
-        @if $name  !="p" {
-            text-transform: uppercase;
-        }
-
-        @if $name  !="h1" {
-            font-weight: config.$defaultfontweight;
-        }
-    }
-
-}
-
-
-
-h2,
-h3 {
-    letter-spacing: 1.5px;
-}
-
-p {
-    letter-spacing: 1px;
-}
-
-.intro,
-.checkmarksection,
-.articlesection,
 .footer {
-    color: config.$secondary;
-}
+    background-color: config.$primary;
 
+    input {
+        margin: 0.2rem;
+        width: 2.5rem;
 
+        transition: config.$transitionsocial;
 
-.line-decoration {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    padding-top: map.get(config.$padding, "thin");
-
-    width: 100%;
-
-    // height: 10vh;
-
-    &::before,
-    &::after {
-        display: inline-block;
-        border-top: 1px solid config.$secondarylight;
-        border-bottom: 1px solid config.$secondarylight;
-        height: 0.3rem;
-        content: '';
-        width: 100%;
-
-        opacity: 0.5;
-
+        &:hover {
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+            filter: brightness(115%);
+        }
     }
 
-    i {
-
-        margin: 0 2rem;
-
-        font-size: 3em;
-
-        color: config.$secondarylight;
-
-
+    p {
+        font-size: 0.9em;
+        line-height: 1em;
     }
-
 }
-
-.intro {
-
-
-    a {
-        color: config.$quaternay ;
-    }
-
-
-
-
-}
-
 
 
 @media screen and (min-width: 769px) {
@@ -426,10 +385,63 @@ p {
 
     }
 
+    body {
+        background-image: config.$imgbanner;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    h1 {
+        font-size: 3.75em;
+        letter-spacing: 8px;
+    }
+
     p {
         font-size: 1.3em;
     }
 
+    .buttonnavbarcontainer {
+        display: none;
+    }
+
+    .headercontainer {
+        @include backgroundstyle("desktop", "light", false, true, false, true);
+    }
+
+    .header {
+        padding: map.get(config.$padding, "medium") map.get(config.$padding, "medium");
+
+        background-color: rgba(34, 8, 0, 0.4);
+
+        width: 20em;
+    }
+
+    .sectioncontainer {
+        @include backgroundstyle("desktop", "dark", true, true, false, false);
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
+    }
+
+    .intro {
+        padding: map.get(config.$padding, "medium") map.get(config.$padding, "xx-large");
+    }
+
+    .coloredsection {
+        @include backgroundstyle("desktop", "light", false, true, false, false);
+        flex-direction: row-reverse;
+
+
+        svg {
+            width: 7em;
+            padding: 0.5em;
+        }
+
+    }
+
+    .coloredsectiontext {
+        min-width: 65%;
+        max-width: 65%;
+        text-align: left;
+    }
 
     .checkmarksection {
         flex-direction: row;
@@ -445,41 +457,6 @@ p {
         i {
             font-size: 7em;
         }
-    }
-
-    .header {
-        padding: map.get(config.$padding, "mledium") map.get(config.$padding, "medium");
-
-        background-color: rgba(34, 8, 0, 0.4);
-
-        width: 20em;
-    }
-
-    .buttonnavbarcontainer {
-        display: none;
-    }
-
-    body {
-        background-image: config.$imgbanner;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-
-    .headercontainer {
-        @include backgroundstyle("desktop", "light", false, true, false, true);
-    }
-
-    .sectioncontainer {
-        @include backgroundstyle("desktop", "dark", true, true, false, false);
-        padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
-    }
-
-    .prefooter {
-        @include backgroundstyle("desktop", "light", true, false, false, true);
-    }
-
-    .footer p {
-        font-size: 1em;
     }
 
     .prefooter,
@@ -504,21 +481,18 @@ p {
         }
     }
 
-    .coloredsection {
-        @include backgroundstyle("desktop", "light", false, true, false, false);
-        flex-direction: row-reverse;
-
-
-        svg {
-            width: 7em;
-            padding: 0.5em;
-        }
-
+    .prefooter {
+        @include backgroundstyle("desktop", "light", true, false, false, true);
     }
 
-    h1 {
-        font-size: 3.75em;
-        letter-spacing: 8px;
+    .footer p {
+        font-size: 1em;
+    }
+
+    .footer {
+        input {
+            width: 4em;
+        }
     }
 
     .dottedpipe::after {
@@ -534,33 +508,5 @@ p {
         width: 100%;
         flex-direction: row;
     }
-
-
-
-    .coloredsectiontext {
-        min-width: 65%;
-        max-width: 65%;
-        text-align: left;
-    }
-
-    .intro {
-        padding: map.get(config.$padding, "medium") map.get(config.$padding, "xx-large");
-    }
-
-
-    .line-decoration {
-        i {
-            margin: 0 3rem;
-            font-size: 4em;
-        }
-    }
-
-    .footer {
-        input {
-            width: 4em;
-        }
-    }
-
-
 
 }
