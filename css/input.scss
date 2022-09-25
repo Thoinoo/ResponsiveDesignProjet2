@@ -188,6 +188,14 @@ a {
 
 }
 
+.menulayouts::before {
+    content: "";
+    width: 22em;
+    height: 22em;
+    background-color: red;
+
+}
+
 
 
 
@@ -419,6 +427,13 @@ a {
 
 
     .sidenav {
+        a {
+            color: white;
+        }
+
+        strong {
+            font-weight: 900;
+        }
 
         position: absolute;
 
@@ -498,7 +513,7 @@ a {
         >ul>ul>ul {
 
             right: 17.7em;
-            top: 12.5em;
+            top: 12.25em;
         }
 
 
@@ -537,23 +552,23 @@ a {
         }
 
         .btn-nav-tertiary-bold {
-            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "bold");
+            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "bold", true);
         }
 
         .btn-nav-tertiary-bold-scrolled {
-            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "bold");
+            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "bold", true);
         }
 
         .btn-nav-tertiary-light {
-            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "light");
+            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "light", false);
         }
 
         .btn-nav-tertiary-light-scrolled {
-            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "light");
+            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "light", false);
         }
 
         .btn-nav-quaternary-bold {
-            @include buttonNavbar(config.$quaternary, true, rgba(config.$quaternary, 1), config.$primary, rgba(config.$quaternary, 1), "bold");
+            @include buttonNavbar(config.$quaternary, true, rgba(config.$quaternary, 1), config.$primary, rgba(config.$quaternary, 1), "bold", false);
         }
 
         >ul ul {

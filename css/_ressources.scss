@@ -26,7 +26,7 @@
     }
 }
 
-@mixin buttonNavbar($border, $displayborder, $background , $text, $hover, $weight) {
+@mixin buttonNavbar($border, $displayborder, $background , $text, $hover, $weight, $hoverincluded) {
     display: flex;
     justify-content: center;
 
@@ -55,13 +55,15 @@
 
     padding: 0.1em 0.4em;
 
+    @if $hoverincluded {
+        &:hover {
+            background-color: $hover;
+            border: 1px solid $border;
+            cursor: pointer;
 
-    &:hover {
-        background-color: $hover;
-        border: 1px solid $border;
-        cursor: pointer;
-
+        }
     }
+
 
 }
 

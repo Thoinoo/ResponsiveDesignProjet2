@@ -160,6 +160,13 @@ a:hover {
   visibility: hidden;
 }
 
+.menulayouts::before {
+  content: "";
+  width: 22em;
+  height: 22em;
+  background-color: red;
+}
+
 .headercontainer {
   background-image: url("../media/background/light-br.svg"), url("../media/background/light-bl.svg") , url("../media/background/overlay.png") , url("../media/background/banner.jpg");
   background-repeat: no-repeat, no-repeat , repeat , no-repeat;
@@ -422,6 +429,12 @@ a:hover {
     background-color: rgba(0, 0, 0, 0);
     z-index: 10;
   }
+  .sidenav a {
+    color: white;
+  }
+  .sidenav strong {
+    font-weight: 900;
+  }
   .sidenav ul {
     padding: 0;
   }
@@ -464,7 +477,7 @@ a:hover {
   }
   .sidenav > ul > ul > ul {
     right: 17.7em;
-    top: 12.5em;
+    top: 12.25em;
   }
   .sidenav li::before {
     display: none;
@@ -524,11 +537,6 @@ a:hover {
     font-size: 16px;
     padding: 0.1em 0.4em;
   }
-  .sidenav .btn-nav-tertiary-light:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid #FFFFFF;
-    cursor: pointer;
-  }
   .sidenav .btn-nav-tertiary-light-scrolled {
     display: flex;
     justify-content: center;
@@ -539,11 +547,6 @@ a:hover {
     font-size: 16px;
     padding: 0.1em 0.4em;
   }
-  .sidenav .btn-nav-tertiary-light-scrolled:hover {
-    background-color: rgba(88, 91, 92, 0.1);
-    border: 1px solid rgba(88, 91, 92, 0);
-    cursor: pointer;
-  }
   .sidenav .btn-nav-quaternary-bold {
     display: flex;
     justify-content: center;
@@ -553,11 +556,6 @@ a:hover {
     color: #F3F6FA;
     font-size: 16px;
     padding: 0.1em 0.4em;
-  }
-  .sidenav .btn-nav-quaternary-bold:hover {
-    background-color: #83d3c9;
-    border: 1px solid #83D3C9;
-    cursor: pointer;
   }
   .sidenav > ul ul {
     padding: 1em 0;

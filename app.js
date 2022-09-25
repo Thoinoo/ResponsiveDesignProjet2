@@ -69,9 +69,8 @@ function displaylayouts() {
     displayElementSmooth("menulayouts", "0.5s");
     var buttonlayouts = document.getElementById("buttonlayouts");
 
-    buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0.15);";
-    buttonlayouts.style.borderStyle = "solid"
-    buttonlayouts.style.borderWidth = "1px";
+    buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+    //  buttonlayouts.style.borderStyle = "solid"
     buttonlayouts.style.borderColor = "white";
 
   }
@@ -82,8 +81,15 @@ function hidelayouts() {
   if (window.screen.width > 769) {
     setTimeout(() => {
       if (!mouseOnMenuLayouts) {
+        var menulayouts = document.getElementById("menulayouts");
 
-        document.getElementById("menulayouts").style.visibility = "hidden";
+        menulayouts.style.transition = "0.1s";
+        menulayouts.style.visibility = "hidden";
+
+        var buttonlayouts = document.getElementById("buttonlayouts");
+
+        buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0)";
+        buttonlayouts.style.borderColor = "rgba(255, 255, 255, 0)";
       }
     }, 300);
   }
@@ -94,7 +100,7 @@ function hidelayouts() {
 function displaysubmenu() {
   if (window.screen.width > 769) {
     displayElementSmooth("menusubmenu", "0.5s");
-    //document.getElementById("menusubmenu").style.visibility = "visible";
+    document.getElementById("libuttonsubmenu").style.background = "#83D3C9";
   }
 }
 function hidesubmenu() {
@@ -104,6 +110,7 @@ function hidesubmenu() {
       if (!MouseOnMenuSubmenu) {
 
         document.getElementById("menusubmenu").style.visibility = "hidden";
+        document.getElementById("libuttonsubmenu").style.background = "white";
       }
     }, 300);
   }
@@ -119,77 +126,78 @@ function changeButtonStyle(id, color) {
 }*/
 
 function fixenavbar() {
+  if (window.screen.width > 769) {
+    var position = document.getElementById("myheader").getBoundingClientRect();
+    var sidenav = document.getElementById("mySidenav");
 
-  var position = document.getElementById("myheader").getBoundingClientRect();
-  var sidenav = document.getElementById("mySidenav");
-
-  if (position.bottom <= 0) {
-    var layouts = document.getElementById("buttonlayouts");
-    var welcome = document.getElementById("buttonwelcome");
-    var menulayouts = document.getElementById("menulayouts");
-    var menusubmenu = document.getElementById("menusubmenu");
-
-    if (sidenav.style.backgroundColor != "white") {
-
-      sidenav.style.transition = "none";
-      sidenav.style.height = "3.5em";
-
-      sidenav.style.borderBottomColor = "#585b5c10";
-      sidenav.style.borderBottomWidth = "2px";
-      sidenav.style.borderBottomStyle = "solid";
-
-      menulayouts.style.top = "4.2em";
-      menusubmenu.style.top = "11.7em";
-
-
-      layouts.className = "btn-nav-tertiary-light-scrolled";
-      welcome.className = "btn-nav-tertiary-bold-scrolled";
-      /*
-      changeButtonStyle("buttonlayouts", "#7E808180")
-      changeButtonStyle("buttonwelcome", "#7E808180")*/
-
-      sidenav.style.top = "-8em";
-      sidenav.style.backgroundColor = "white";
-      sidenav.style.position = "fixed";
-      // ...
-
-      setTimeout(() => {
-        sidenav.style.transition = "0.7s";
-        sidenav.style.top = "0";
-      }, 10);
-    }
-
-  }
-  else {
-
-    if (sidenav.style.backgroundColor == "white") {
-
+    if (position.bottom <= 0) {
       var layouts = document.getElementById("buttonlayouts");
       var welcome = document.getElementById("buttonwelcome");
       var menulayouts = document.getElementById("menulayouts");
       var menusubmenu = document.getElementById("menusubmenu");
 
-      sidenav.style.transition = "none";
-      sidenav.style.height = "6em";
-      sidenav.style.backgroundColor = "rgb(255,255,255,0)";
-      sidenav.style.borderBottomWidth = "0";
+      if (sidenav.style.backgroundColor != "white") {
 
-      document.getElementById("mySidenav").style.position = "absolute";
+        sidenav.style.transition = "none";
+        sidenav.style.height = "3.5em";
 
-      menulayouts.style.top = "5em";
-      menusubmenu.style.top = "12.5em";
+        sidenav.style.borderBottomColor = "#585b5c10";
+        sidenav.style.borderBottomWidth = "2px";
+        sidenav.style.borderBottomStyle = "solid";
 
-      layouts.className = layouts.className.replace("-scrolled", "");
-      welcome.className = welcome.className.replace("-scrolled", "");
-
+        menulayouts.style.top = "4.2em";
+        menusubmenu.style.top = "11.45em";
 
 
-      setTimeout(() => {
-        sidenav.style.transition = "0.7s";
-      }, 10);
+        layouts.className = "btn-nav-tertiary-light-scrolled";
+        welcome.className = "btn-nav-tertiary-bold-scrolled";
+        /*
+        changeButtonStyle("buttonlayouts", "#7E808180")
+        changeButtonStyle("buttonwelcome", "#7E808180")*/
+
+        sidenav.style.top = "-8em";
+        sidenav.style.backgroundColor = "white";
+        sidenav.style.position = "fixed";
+        // ...
+
+        setTimeout(() => {
+          sidenav.style.transition = "0.7s";
+          sidenav.style.top = "0";
+        }, 10);
+      }
 
     }
+    else {
 
+      if (sidenav.style.backgroundColor == "white") {
+
+        var layouts = document.getElementById("buttonlayouts");
+        var welcome = document.getElementById("buttonwelcome");
+        var menulayouts = document.getElementById("menulayouts");
+        var menusubmenu = document.getElementById("menusubmenu");
+
+        sidenav.style.transition = "none";
+        sidenav.style.height = "6em";
+        sidenav.style.backgroundColor = "rgb(255,255,255,0)";
+        sidenav.style.borderBottomWidth = "0";
+
+        document.getElementById("mySidenav").style.position = "absolute";
+
+        menulayouts.style.top = "5em";
+        menusubmenu.style.top = "12.25em";
+
+        layouts.className = layouts.className.replace("-scrolled", "");
+        welcome.className = welcome.className.replace("-scrolled", "");
+
+
+
+        setTimeout(() => {
+          sidenav.style.transition = "0.7s";
+        }, 10);
+
+      }
+
+    }
   }
 }
 
