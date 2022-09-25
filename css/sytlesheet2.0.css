@@ -160,13 +160,6 @@ a:hover {
   visibility: hidden;
 }
 
-.menulayouts::before {
-  content: "";
-  width: 22em;
-  height: 22em;
-  background-color: red;
-}
-
 .headercontainer {
   background-image: url("../media/background/light-br.svg"), url("../media/background/light-bl.svg") , url("../media/background/overlay.png") , url("../media/background/banner.jpg");
   background-repeat: no-repeat, no-repeat , repeat , no-repeat;
@@ -561,14 +554,19 @@ a:hover {
     padding: 1em 0;
     width: 10em;
   }
+  .sidenav .menulayouts::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    top: -0.3em;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 1em;
+  }
   .btn-nav-quaternary-bold:hover {
     filter: brightness(1.075);
-  }
-  .menulayouts::before {
-    content: "";
-    width: 22em;
-    height: 22em;
-    background-color: red;
   }
   .btn-nav-tertiary-light::before {
     top: 0;

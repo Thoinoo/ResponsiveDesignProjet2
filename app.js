@@ -63,15 +63,38 @@ function hideElementSmooth(id, flag) {
 
 }*/
 
+function resizechecker() {
+  mysidenav = document.getElementById("mySidenav");
+  if (window.screen.width > 769) {
+
+    mysidenav.style.left = "0";
+
+  } else {
+    /*mysidenav.style.
+    mysidenav.style.
+    mysidenav.style.
+    mysidenav.style.
+    mysidenav.style.*/
+  }
+}
+
 function displaylayouts() {
 
   if (window.screen.width > 769) {
+    console.log("display layouts");
     displayElementSmooth("menulayouts", "0.5s");
     var buttonlayouts = document.getElementById("buttonlayouts");
 
-    buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
-    //  buttonlayouts.style.borderStyle = "solid"
-    buttonlayouts.style.borderColor = "white";
+
+    if (document.getElementById("mySidenav").style.backgroundColor == "white") {
+      buttonlayouts.style.backgroundColor = "rgba(88, 91, 92, 0.1)";
+      buttonlayouts.style.borderColor = "rgba(88, 91, 92, 0)";
+    } else {
+      buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0.15)";
+      buttonlayouts.style.borderColor = "white";
+    }
+
+
 
   }
 
@@ -88,8 +111,15 @@ function hidelayouts() {
 
         var buttonlayouts = document.getElementById("buttonlayouts");
 
-        buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0)";
-        buttonlayouts.style.borderColor = "rgba(255, 255, 255, 0)";
+        if (document.getElementById("mySidenav").style.backgroundColor != "white") {
+          buttonlayouts.style.backgroundColor = "rgba(88, 91, 92, 0.1)";
+          buttonlayouts.style.borderColor = "rgba(88, 91, 92, 0)";
+        } else {
+          buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0)";
+          buttonlayouts.style.borderColor = "rgba(255, 255, 255, 0)";
+        }
+
+
       }
     }, 300);
   }
@@ -121,8 +151,8 @@ function changeButtonStyle(id, color) {
   button.style.color = color;
   button.style.border = "0px";
   button.style.backgroundColor = color;
-
-
+ 
+ 
 }*/
 
 function fixenavbar() {
@@ -135,6 +165,7 @@ function fixenavbar() {
       var welcome = document.getElementById("buttonwelcome");
       var menulayouts = document.getElementById("menulayouts");
       var menusubmenu = document.getElementById("menusubmenu");
+      var homebutton = document.getElementById("homebutton");
 
       if (sidenav.style.backgroundColor != "white") {
 
@@ -147,6 +178,8 @@ function fixenavbar() {
 
         menulayouts.style.top = "4.2em";
         menusubmenu.style.top = "11.45em";
+
+        homebutton.style.color = "#585b5c";
 
 
         layouts.className = "btn-nav-tertiary-light-scrolled";
@@ -175,11 +208,14 @@ function fixenavbar() {
         var welcome = document.getElementById("buttonwelcome");
         var menulayouts = document.getElementById("menulayouts");
         var menusubmenu = document.getElementById("menusubmenu");
+        var homebutton = document.getElementById("homebutton");
 
         sidenav.style.transition = "none";
         sidenav.style.height = "6em";
         sidenav.style.backgroundColor = "rgb(255,255,255,0)";
         sidenav.style.borderBottomWidth = "0";
+
+        homebutton.style.color = "white";
 
         document.getElementById("mySidenav").style.position = "absolute";
 
@@ -218,6 +254,7 @@ function menumenusubmenuplayedFalse() {
 
 //FIN TESTS
 
+document.addEventListener("onresize", resizechecker);
 
 document.addEventListener("scroll", fixenavbar);
 
