@@ -161,7 +161,7 @@ a:hover {
 }
 
 .headercontainer {
-  background-image: url("media/background/light-br.svg"), url("media/background/light-bl.svg") , url("media/background/overlay.png") , url("media/banner.jpg");
+  background-image: url("../media/background/light-br.svg"), url("../media/background/light-bl.svg") , url("../media/background/overlay.png") , url("../media/background/banner.jpg");
   background-repeat: no-repeat, no-repeat , repeat , no-repeat;
   background-size: 11em, 11em , 15em , cover;
   background-position: bottom right, bottom left , center , center;
@@ -218,7 +218,7 @@ a:hover {
 }
 
 .sectioncontainer {
-  background-image: url("media/background/dark-tl.svg"), url("media/background/dark-tr.svg");
+  background-image: url("../media/background/dark-tl.svg"), url("../media/background/dark-tr.svg");
   background-repeat: no-repeat, no-repeat;
   background-size: 11em, 11em;
   background-position: top left, top right;
@@ -251,7 +251,7 @@ a:hover {
 }
 
 .prefooter {
-  background-image: url("media/background/light-tl.svg"), url("media/background/light-tr.svg") , url("media/background/overlay.png") , url("media/banner.jpg");
+  background-image: url("../media/background/light-tl.svg"), url("../media/background/light-tr.svg") , url("../media/background/overlay.png") , url("../media/background/banner.jpg");
   background-repeat: no-repeat, no-repeat , repeat , no-repeat;
   background-size: 11em, 11em , 15em , cover;
   background-position: top left, top right , center , center;
@@ -401,7 +401,7 @@ a:hover {
     font-size: 1.4em;
   }
   body {
-    background-image: url("media/banner.jpg");
+    background-image: url("../media/background/banner.jpg");
     background-size: cover;
     background-attachment: fixed;
   }
@@ -611,7 +611,7 @@ a:hover {
     position: static;
   }
   .headercontainer {
-    background-image: url("media/background/light-br.svg"), url("media/background/light-bl.svg") , url("media/background/overlay.png");
+    background-image: url("../media/background/light-br.svg"), url("../media/background/light-bl.svg") , url("../media/background/overlay.png");
     background-repeat: no-repeat, no-repeat , repeat;
     background-size: 26em, 26em , 15em;
     background-position: bottom right, bottom left , center;
@@ -622,7 +622,7 @@ a:hover {
     width: 20em;
   }
   .sectioncontainer {
-    background-image: url("media/background/dark-tl.svg"), url("media/background/dark-tr.svg") , url("media/background/dark-br.svg"), url("media/background/dark-bl.svg");
+    background-image: url("../media/background/dark-tl.svg"), url("../media/background/dark-tr.svg") , url("../media/background/dark-br.svg"), url("../media/background/dark-bl.svg");
     background-repeat: no-repeat, no-repeat , no-repeat, no-repeat;
     background-size: 26em, 26em , 26em, 26em;
     background-position: top left, top right , bottom right, bottom left;
@@ -635,7 +635,7 @@ a:hover {
     padding: 3em 12em;
   }
   .coloredsection {
-    background-image: url("media/background/light-br.svg"), url("media/background/light-bl.svg");
+    background-image: url("../media/background/light-br.svg"), url("../media/background/light-bl.svg");
     background-repeat: no-repeat, no-repeat;
     background-size: 26em, 26em;
     background-position: bottom right, bottom left;
@@ -680,7 +680,7 @@ a:hover {
     width: 45%;
   }
   .prefooter {
-    background-image: url("media/background/light-tl.svg"), url("media/background/light-tr.svg") , url("media/background/overlay.png");
+    background-image: url("../media/background/light-tl.svg"), url("../media/background/light-tr.svg") , url("../media/background/overlay.png");
     background-repeat: no-repeat, no-repeat , repeat;
     background-size: 26em, 26em , 15em;
     background-position: top left, top right , center;

@@ -82,19 +82,19 @@
     @if $color =="light"
 
         {
-        $tr: url("media/background/light-tr.svg");
-        $tl: url("media/background/light-tl.svg");
-        $br: url("media/background/light-br.svg");
-        $bl: url("media/background/light-bl.svg");
+        $tr: url("../media/background/light-tr.svg");
+        $tl: url("../media/background/light-tl.svg");
+        $br: url("../media/background/light-br.svg");
+        $bl: url("../media/background/light-bl.svg");
     }
 
     @if $color =="dark"
 
         {
-        $tr: url("media/background/dark-tr.svg");
-        $tl: url("media/background/dark-tl.svg");
-        $br: url("media/background/dark-br.svg");
-        $bl: url("media/background/dark-bl.svg");
+        $tr: url("../media/background/dark-tr.svg");
+        $tl: url("../media/background/dark-tl.svg");
+        $br: url("../media/background/dark-br.svg");
+        $bl: url("../media/background/dark-bl.svg");
     }
 
 
@@ -131,7 +131,7 @@
             $bgposition: $bgposition unquote("\002C");
         }
 
-        $bgimage: $bgimage url("media/background/overlay.png");
+        $bgimage: $bgimage url("../media/background/overlay.png");
         $bgrepeat: $bgrepeat repeat;
         $bgsize: $bgsize 15em;
         $bgposition: $bgposition center;
