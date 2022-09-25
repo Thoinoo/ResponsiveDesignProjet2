@@ -427,13 +427,15 @@ a {
         align-items: center;
         justify-content: space-between;
 
-        height: 10%;
+        height: 6em;
 
         top: 0;
         left: 0;
         width: 100%;
 
         background-color: rgba(0, 0, 0, 0);
+
+        z-index: 10;
 
 
         ul {
@@ -446,6 +448,9 @@ a {
             flex-direction: row;
             justify-content: end;
 
+            >a {
+                justify-content: start;
+            }
 
 
         }
@@ -465,16 +470,23 @@ a {
         }
 
         >ul>ul {
+            top: 5em;
+            right: 7.7em;
 
-            position: absolute;
-            top: 4em;
-            right: 8em;
+        }
 
+        >ul>ul,
+        ul>ul>ul {
+            position: fixed;
+            background-color: config.$tertiary;
+            width: 10em;
             visibility: hidden;
 
-            background-color: config.$tertiary;
             color: #444747;
 
+            border-bottom: 2px solid rgba(config.$secondary, 0.1);
+            border-right: 1px solid rgba(config.$secondary, 0.08);
+            border-left: 1px solid rgba(config.$secondary, 0.08);
         }
 
 
@@ -484,15 +496,12 @@ a {
         }
 
         >ul>ul>ul {
-            background-color: config.$tertiary;
 
-            position: absolute;
-            width: 9em;
-
-            right: 8.5em;
-            top: 9em;
-            visibility: hidden;
+            right: 17.7em;
+            top: 12.5em;
         }
+
+
 
 
         li {
@@ -514,7 +523,7 @@ a {
         a {
 
 
-            height: 2em;
+            height: 1.5em;
             width: 100%;
 
 
@@ -531,8 +540,16 @@ a {
             @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "bold");
         }
 
+        .btn-nav-tertiary-bold-scrolled {
+            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "bold");
+        }
+
         .btn-nav-tertiary-light {
             @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "light");
+        }
+
+        .btn-nav-tertiary-light-scrolled {
+            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "light");
         }
 
         .btn-nav-quaternary-bold {
@@ -541,7 +558,7 @@ a {
 
         >ul ul {
             padding: 1em 0;
-            width: 9em;
+            width: 10em;
         }
 
 
@@ -551,7 +568,48 @@ a {
         filter: brightness(1.075);
     }
 
+    // TODO
+    .menulayouts::before {
+        content: "";
+        width: 22em;
+        height: 22em;
+        background-color: red;
 
+    }
+
+    .btn-nav-tertiary-light::before {
+
+        top: 0;
+
+        content: "";
+        width: 0.4em;
+        height: 0.4em;
+
+        border-top: 3px solid white;
+        border-left: 3px solid white;
+
+        margin-right: 1em;
+
+
+        transform: rotate(225deg);
+    }
+
+    .btn-nav-tertiary-light-scrolled::before {
+
+        top: 0;
+
+        content: "";
+        width: 0.4em;
+        height: 0.4em;
+
+        border-top: 3px solid config.$secondary;
+        border-left: 3px solid config.$secondary;
+
+        margin-right: 1em;
+
+
+        transform: rotate(225deg);
+    }
 
 
 
@@ -564,7 +622,7 @@ a {
         background-color: config.$tertiary;
         height: fit-content;
 
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid config.$secondarylight;
 
         &:hover {
             background-color: config.$quaternary;
@@ -603,6 +661,12 @@ a {
     .sectioncontainer {
         @include backgroundstyle("desktop", "dark", true, true, false, false);
         padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
+    }
+
+    .line-decoration {
+        i {
+            font-size: 4em;
+        }
     }
 
     .intro {

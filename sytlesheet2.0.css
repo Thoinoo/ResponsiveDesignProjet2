@@ -415,11 +415,12 @@ a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 10%;
+    height: 6em;
     top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
+    z-index: 10;
   }
   .sidenav ul {
     padding: 0;
@@ -429,6 +430,9 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: end;
+  }
+  .sidenav > ul > a {
+    justify-content: start;
   }
   .sidenav > ul > li {
     margin: 0 2em;
@@ -440,24 +444,27 @@ a:hover {
     font-weight: 100;
   }
   .sidenav > ul > ul {
-    position: absolute;
-    top: 4em;
-    right: 8em;
-    visibility: hidden;
+    top: 5em;
+    right: 7.7em;
+  }
+  .sidenav > ul > ul,
+.sidenav ul > ul > ul {
+    position: fixed;
     background-color: #FFFFFF;
+    width: 10em;
+    visibility: hidden;
     color: #444747;
+    border-bottom: 2px solid rgba(88, 91, 92, 0.1);
+    border-right: 1px solid rgba(88, 91, 92, 0.08);
+    border-left: 1px solid rgba(88, 91, 92, 0.08);
   }
   .sidenav > ul > ul > li > a,
 .sidenav > ul > ul > ul > li > a {
     color: #585b5c;
   }
   .sidenav > ul > ul > ul {
-    background-color: #FFFFFF;
-    position: absolute;
-    width: 9em;
-    right: 8.5em;
-    top: 9em;
-    visibility: hidden;
+    right: 17.7em;
+    top: 12.5em;
   }
   .sidenav li::before {
     display: none;
@@ -470,7 +477,7 @@ a:hover {
     justify-content: start;
   }
   .sidenav a {
-    height: 2em;
+    height: 1.5em;
     width: 100%;
   }
   .sidenav ul,
@@ -478,7 +485,8 @@ a:hover {
     transition: 0.1s;
   }
   .sidenav .btn-nav-tertiary-bold {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0);
     font-weight: 900;
@@ -491,8 +499,24 @@ a:hover {
     border: 1px solid #FFFFFF;
     cursor: pointer;
   }
+  .sidenav .btn-nav-tertiary-bold-scrolled {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(88, 91, 92, 0);
+    border: 1px solid rgba(88, 91, 92, 0);
+    font-weight: 900;
+    color: #585b5c;
+    font-size: 16px;
+    padding: 0.1em 0.4em;
+  }
+  .sidenav .btn-nav-tertiary-bold-scrolled:hover {
+    background-color: rgba(88, 91, 92, 0.1);
+    border: 1px solid rgba(88, 91, 92, 0);
+    cursor: pointer;
+  }
   .sidenav .btn-nav-tertiary-light {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0);
     font-weight: 100;
@@ -505,8 +529,24 @@ a:hover {
     border: 1px solid #FFFFFF;
     cursor: pointer;
   }
+  .sidenav .btn-nav-tertiary-light-scrolled {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(88, 91, 92, 0);
+    border: 1px solid rgba(88, 91, 92, 0);
+    font-weight: 100;
+    color: #585b5c;
+    font-size: 16px;
+    padding: 0.1em 0.4em;
+  }
+  .sidenav .btn-nav-tertiary-light-scrolled:hover {
+    background-color: rgba(88, 91, 92, 0.1);
+    border: 1px solid rgba(88, 91, 92, 0);
+    cursor: pointer;
+  }
   .sidenav .btn-nav-quaternary-bold {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     background-color: #83d3c9;
     border: 1px solid #83D3C9;
     font-weight: 900;
@@ -521,16 +561,42 @@ a:hover {
   }
   .sidenav > ul ul {
     padding: 1em 0;
-    width: 9em;
+    width: 10em;
   }
   .btn-nav-quaternary-bold:hover {
     filter: brightness(1.075);
+  }
+  .menulayouts::before {
+    content: "";
+    width: 22em;
+    height: 22em;
+    background-color: red;
+  }
+  .btn-nav-tertiary-light::before {
+    top: 0;
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    margin-right: 1em;
+    transform: rotate(225deg);
+  }
+  .btn-nav-tertiary-light-scrolled::before {
+    top: 0;
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-top: 3px solid #585b5c;
+    border-left: 3px solid #585b5c;
+    margin-right: 1em;
+    transform: rotate(225deg);
   }
   .whitespace {
     padding: 0.2em 1em;
     background-color: #FFFFFF;
     height: fit-content;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #C9CDD0;
   }
   .whitespace:hover {
     background-color: #83D3C9;
@@ -561,6 +627,9 @@ a:hover {
     background-size: 26em, 26em , 26em, 26em;
     background-position: top left, top right , bottom right, bottom left;
     padding: 5em 12em;
+  }
+  .line-decoration i {
+    font-size: 4em;
   }
   .intro {
     padding: 3em 12em;
