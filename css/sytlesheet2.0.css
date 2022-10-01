@@ -387,7 +387,7 @@ a:hover {
   line-height: 1em;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
   h1 {
     font-size: 2.2em;
   }
@@ -476,6 +476,7 @@ a:hover {
     display: none;
   }
   .sidenav .homebutton {
+    width: 60%;
     visibility: visible;
     padding-left: 2em;
     text-transform: uppercase;

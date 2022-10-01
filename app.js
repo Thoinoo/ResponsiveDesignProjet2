@@ -65,22 +65,67 @@ function hideElementSmooth(id, flag) {
 
 function resizechecker() {
   mysidenav = document.getElementById("mySidenav");
-  if (window.screen.width > 769) {
+
+  console.log("resize width = " + window.innerWidth );
+
+  
+  var layouts = document.getElementById("buttonlayouts");
+  var welcome = document.getElementById("buttonwelcome");
+  var menulayouts = document.getElementById("menulayouts");
+  var menusubmenu = document.getElementById("menusubmenu");
+  var homebutton = document.getElementById("homebutton");
+
+  if (window.innerWidth > 992) {
+
+    var position = document.getElementById("myheader").getBoundingClientRect();
+    
+    if (position.bottom <= 0){
+
+      mysidenav.style.height = "3.5em";
+      mysidenav.style.backgroundColor = "white";
+
+      
+
+    }else{
+
+      mysidenav.style.height = "6em";
+      mysidenav.style.backgroundColor = "rgb(0,0,0,0)";
+      
+      
+
+    }
 
     mysidenav.style.left = "0";
+    mysidenav.style.top ="0";
+    
+
+    document.getElementById("menulayouts").style.visibility = "hidden";
+    document.getElementById("menusubmenu").style.visibility = "hidden";
 
   } else {
-    /*mysidenav.style.
-    mysidenav.style.
-    mysidenav.style.
-    mysidenav.style.
-    mysidenav.style.*/
+
+    document.getElementById("menulayouts").style.visibility = "visible";
+    document.getElementById("menusubmenu").style.visibility = "visible";
+    document.getElementById("buttonlayouts").style.backgroundColor = "rgb(0,0,0,0)";
+    document.getElementById("libuttonsubmenu").style.backgroundColor = "rgb(0,0,0,0)";
+
+    main = document.getElementById("main");
+
+    main.style.left ="0";
+
+    mysidenav.style.left = "-18rem";
+    mysidenav.style.backgroundColor = "#1C2021" ;
+    mysidenav.style.height ="110%";
+    mysidenav.style.position ="fixed";
+    mysidenav.style.top = "-3.56em";
+    mysidenav.style.transition ="0.7s";
+
   }
 }
 
 function displaylayouts() {
 
-  if (window.screen.width > 769) {
+  if (window.innerWidth > 992) {
     console.log("display layouts");
     displayElementSmooth("menulayouts", "0.5s");
     var buttonlayouts = document.getElementById("buttonlayouts");
@@ -101,7 +146,7 @@ function displaylayouts() {
 }
 function hidelayouts() {
 
-  if (window.screen.width > 769) {
+  if (window.innerWidth > 992) {
     setTimeout(() => {
       if (!mouseOnMenuLayouts) {
         var menulayouts = document.getElementById("menulayouts");
@@ -128,14 +173,14 @@ function hidelayouts() {
 
 
 function displaysubmenu() {
-  if (window.screen.width > 769) {
+  if (window.innerWidth > 992) {
     displayElementSmooth("menusubmenu", "0.5s");
     document.getElementById("libuttonsubmenu").style.background = "#83D3C9";
   }
 }
 function hidesubmenu() {
 
-  if (window.screen.width > 769) {
+  if (window.innerWidth > 992) {
     setTimeout(() => {
       if (!MouseOnMenuSubmenu) {
 
@@ -156,7 +201,7 @@ function changeButtonStyle(id, color) {
 }*/
 
 function fixenavbar() {
-  if (window.screen.width > 769) {
+  if (window.innerWidth > 992) {
     var position = document.getElementById("myheader").getBoundingClientRect();
     var sidenav = document.getElementById("mySidenav");
 
@@ -254,7 +299,8 @@ function menumenusubmenuplayedFalse() {
 
 //FIN TESTS
 
-document.addEventListener("onresize", resizechecker);
+window.addEventListener("resize", resizechecker);
+onresize = (event) => {resizechecker};
 
 document.addEventListener("scroll", fixenavbar);
 

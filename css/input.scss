@@ -390,7 +390,7 @@ a {
 
 
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
 
 
 
@@ -513,6 +513,7 @@ a {
         }
 
         .homebutton {
+            width: 60%;
             visibility: visible;
             padding-left: 2em;
             text-transform: uppercase;
