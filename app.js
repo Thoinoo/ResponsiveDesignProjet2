@@ -144,6 +144,7 @@ function displaylayouts() {
   }
 
 }
+
 function hidelayouts() {
 
   if (window.innerWidth > 992) {
@@ -157,7 +158,7 @@ function hidelayouts() {
         var buttonlayouts = document.getElementById("buttonlayouts");
 
         if (document.getElementById("mySidenav").style.backgroundColor != "white") {
-          buttonlayouts.style.backgroundColor = "rgba(88, 91, 92, 0.1)";
+          buttonlayouts.style.backgroundColor = "rgba(88, 91, 92, 0)";
           buttonlayouts.style.borderColor = "rgba(88, 91, 92, 0)";
         } else {
           buttonlayouts.style.backgroundColor = "rgba(255, 255, 255, 0)";
@@ -227,8 +228,8 @@ function fixenavbar() {
         homebutton.style.color = "#585b5c";
 
 
-        layouts.className = "btn-nav-tertiary-light-scrolled";
-        welcome.className = "btn-nav-tertiary-bold-scrolled";
+        layouts.className = "btn-nav-white-light-scrolled";
+        welcome.className = "btn-nav-white-bold-scrolled";
         /*
         changeButtonStyle("buttonlayouts", "#7E808180")
         changeButtonStyle("buttonwelcome", "#7E808180")*/

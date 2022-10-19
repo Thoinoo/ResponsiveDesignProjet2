@@ -3,8 +3,7 @@
 @use "config";
 @import "ressources";
 
-
-
+// GENERAL
 html {
     overflow-x: hidden;
     font-size: config.$defaultfontsize;
@@ -20,21 +19,6 @@ body {
     overflow-x: hidden;
 }
 
-@each $name,
-$ratio in config.$fontsize {
-    #{$name} {
-        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio);
-    }
-}
-
-
-
-h1,
-h2,
-h3 {
-    text-transform: uppercase;
-}
-
 h1 {
     padding: 0.2em 0;
 
@@ -42,30 +26,16 @@ h1 {
     letter-spacing: 4px;
 
     width: fit-content;
-    border-top: 7px double config.$primary;
-    border-bottom: 7px double config.$primary;
+    border-top: 7px double config.$whitealmost;
+    border-bottom: 7px double config.$whitealmost;
 
 
 
-}
-
-h2,
-h3 {
-    letter-spacing: 1.5px;
-    line-height: 1.4em;
 }
 
 p {
     letter-spacing: 1px;
     line-height: 1.4em;
-}
-
-
-
-p,
-h2,
-h3 {
-    font-weight: lighter;
 }
 
 a {
@@ -78,17 +48,73 @@ a {
         cursor: pointer;
     }
 }
+// Fonts for h1, h2...
+@each $name,
+$ratio in config.$fontsize {
+    #{$name} {
+        font-size: (map.get(config.$fontsizescreen, "smartphone") * $ratio);
+    }
+}
 
-.main {
-    left: 0;
+// GROUPED CLASS
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
 
-    position: relative;
+.coloredsection,
+.checkmarksection,
+.articlesection {
+    p {
+        text-align: justify;
+    }
+}
 
-    transition: config.$transitionnavbar;
+.headercontainer,
+.coloredsection,
+.prefooter {
+    color: config.$white;
+}
+
+.intro,
+.checkmarksection,
+.articlesection,
+.footer {
+    color: config.$grey;
+}
+
+.coloredsection,
+.checkmarksection,
+.articlesection,
+.prefooter,
+.footer {
+    @extend %flex-center-column;
+    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
 
 }
 
+.coloredsection,
+.checkmarksection {
+    div {
+        margin: map.get(config.$padding, "thin") 0;
+    }
 
+}
+
+p,
+h2,
+h3 {
+    font-weight: lighter;
+}
+
+h2,
+h3 {
+    letter-spacing: 1.5px;
+    line-height: 1.4em;
+}
+
+// NAVBAR 
 .buttonnavbar {
     top: 1em;
     left: 1em;
@@ -99,8 +125,8 @@ a {
 
     padding: 1em;
 
-    color: config.$primary;
-    background-color: rgba(config.$secondary, 0.8);
+    color: config.$whitealmost;
+    background-color: rgba(config.$grey, 0.8);
 
     border-radius: 3px;
     border: 0;
@@ -115,7 +141,7 @@ a {
 
     width: 0.9rem;
 
-    fill: config.$primary;
+    fill: config.$whitealmost;
 }
 
 .buttonnavbarcontainer {
@@ -126,7 +152,7 @@ a {
     width: config.$sidenavwidth;
     left: config.$sidenavwidth * -1;
 
-    background-color: config.$fifth;
+    background-color: config.$black;
     height: 110%;
     position: fixed;
     top: -3.56em;
@@ -151,7 +177,7 @@ a {
 
             position: absolute;
             width: 90%;
-            border-bottom: 1px solid config.$primary;
+            border-bottom: 1px solid config.$whitealmost;
             opacity: 0.1;
         }
 
@@ -166,7 +192,7 @@ a {
         font-weight: 100;
 
 
-        color: config.$secondarylightbutnotthatmuch;
+        color: config.$greylightbutnotthatmuch;
         text-decoration: none;
 
         height: 2.8em;
@@ -185,12 +211,17 @@ a {
 
 }
 
+// CONTAINS EVERYTHING EXCEPT SIDENAV
+.main {
+    left: 0;
 
+    position: relative;
 
+    transition: config.$transitionnavbar;
 
+}
 
-
-
+//HEADER
 .headercontainer {
     @include backgroundstyle("smartphone", "light", false, true, true, true);
     @extend %flex-center-column;
@@ -209,20 +240,11 @@ a {
     }
 }
 
-.headercontainer,
-.coloredsection,
-.prefooter {
-    color: config.$tertiary;
+.button-header {
+    max-width: 13.5rem;
 }
 
-.intro,
-.checkmarksection,
-.articlesection,
-.footer {
-    color: config.$secondary;
-}
-
-
+// DECORATION AFTER HEADER
 .line-decoration {
     @extend %flex-center-row;
 
@@ -235,8 +257,8 @@ a {
     &::before,
     &::after {
         display: inline-block;
-        border-top: 1px solid config.$secondarylight;
-        border-bottom: 1px solid config.$secondarylight;
+        border-top: 1px solid config.$greylight;
+        border-bottom: 1px solid config.$greylight;
         height: 0.3rem;
         content: '';
         width: 100%;
@@ -250,10 +272,11 @@ a {
 
         font-size: 3em;
 
-        color: config.$secondarylight;
+        color: config.$greylight;
     }
 
 }
+
 
 .intro {
     @extend %flex-center-column;
@@ -261,37 +284,27 @@ a {
     padding-top: map.get(config.$padding, "x-thin");
 
     a {
-        color: config.$quaternary ;
+        color: config.$blue ;
     }
 }
 
+// ---------- CONTAINS SECTIONS : COLORED SECTION, CHECKMARK SECTION AND ARTICLES ----------
 .sectioncontainer {
     @include backgroundstyle("smartphone", "dark", true, false, false, false);
-    background-color: config.$primary;
+    background-color: config.$whitealmost;
 }
-
-.coloredsection,
-.checkmarksection,
-.articlesection {
-    p {
-        text-align: justify;
-    }
-}
-
-.coloredsection,
-.checkmarksection,
-.articlesection,
-.prefooter,
-.footer {
-    @extend %flex-center-column;
-    padding: map.get(config.$padding, "medium") map.get(config.$padding, "thin");
-
-}
-
-
-
+// COLORED SECTION
 .coloredsection {
-    background-color: config.$quaternary;
+    background-color: config.$blue;
+    svg {
+        fill: config.$bluelight;
+        width: 5em;
+        margin: 0.5em;
+    }
+
+    div {
+        margin: 0;
+    }
 }
 
 .imgcoloredsection {
@@ -301,13 +314,16 @@ a {
     justify-content: center;
 }
 
-.prefooter {
-    @include backgroundstyle("smartphone", "light", true, false, true, true);
+// CHECKMARK SECTION
+.checkmarksection i {
+    color: config.$greylight;
+
+    font-size: 5em;
 }
 
-
+// ARTICLES
 .articlesection {
-    background-color: config.$tertiary;
+    background-color: config.$white;
 
     .article {
         margin: 3em 0;
@@ -322,50 +338,24 @@ a {
     }
 }
 
-.coloredsection,
-.checkmarksection {
-    div {
-        margin: map.get(config.$padding, "thin") 0;
-    }
-
-}
-
-.checkmarksection i {
-    color: config.$secondarylight;
-
-    font-size: 5em;
-}
-
-.coloredsection {
-    svg {
-        fill: config.$quaternarylight;
-        width: 5em;
-        margin: 0.5em;
-    }
-
-    div {
-        margin: 0;
-    }
-}
 
 // button($name, $background color , $border color , $text color, background color on hover )
-@include button("tertiary", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
-@include button("secondary", rgba(config.$secondary, 0), config.$secondary , config.$secondary , rgba(config.$secondary, 0.1));
-@include button("quaternary", rgba(config.$quaternary, 1), config.$quaternary , config.$primary , config.$quaternary );
-@include button("header", rgba(config.$tertiary, 0), config.$tertiary , config.$tertiary , rgba(config.$tertiary, 0.1));
+@include button("white", rgba(config.$white, 0), config.$white , config.$white , rgba(config.$white, 0.1));
+@include button("grey", rgba(config.$grey, 0), config.$grey , config.$grey , rgba(config.$grey, 0.1));
+@include button("blue", rgba(config.$blue, 1), config.$blue , config.$whitealmost , config.$blue );
+@include button("header", rgba(config.$white, 0), config.$white , config.$white , rgba(config.$white, 0.1));
 
-
-.button-quaternary:hover {
+.button-blue:hover {
     filter: brightness(1.075);
 }
 
-.button-header {
-    max-width: 13.5rem;
+// FOOTER
+.prefooter {
+    @include backgroundstyle("smartphone", "light", true, false, true, true);
 }
 
-
 .footer {
-    background-color: config.$primary;
+    background-color: config.$whitealmost;
 
     input {
         margin: 0.2rem;
@@ -387,13 +377,10 @@ a {
 }
 
 
-
-
-
 @media screen and (min-width: 992px) {
 
 
-
+    // GENERAL
     @each $name,
     $ratio in config.$fontsize {
         #{$name} {
@@ -401,8 +388,6 @@ a {
         }
 
     }
-
-
 
     body {
         background-image: config.$imgbanner;
@@ -415,8 +400,16 @@ a {
         letter-spacing: 8px;
     }
 
+    // GROUPED
+    .prefooter,
+    .footer,
+    .coloredsection,
+    .articlesection {
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "large");
 
+    }
 
+    // NAVEBAR
     .sidenav {
 
         position: absolute;
@@ -483,21 +476,21 @@ a {
         >ul>ul,
         ul>ul>ul {
             position: fixed;
-            background-color: config.$tertiary;
+            background-color: config.$white;
             width: 10em;
             visibility: hidden;
 
             color: #444747;
 
-            border-bottom: 2px solid rgba(config.$secondary, 0.1);
-            border-right: 1px solid rgba(config.$secondary, 0.08);
-            border-left: 1px solid rgba(config.$secondary, 0.08);
+            border-bottom: 2px solid rgba(config.$grey, 0.1);
+            border-right: 1px solid rgba(config.$grey, 0.08);
+            border-left: 1px solid rgba(config.$grey, 0.08);
         }
 
 
         >ul>ul>li>a,
         >ul>ul>ul>li>a {
-            color: config.$secondary;
+            color: config.$grey;
         }
 
         >ul>ul>ul {
@@ -533,24 +526,24 @@ a {
             transition: 0.1s;
         }
 
-        .btn-nav-tertiary-bold {
-            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "bold", true);
+        .btn-nav-white-bold {
+            @include buttonNavbar(config.$white, false, rgba(config.$white, 0), config.$white, rgba(config.$white, 0.15), "bold", true);
         }
 
-        .btn-nav-tertiary-bold-scrolled {
-            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "bold", true);
+        .btn-nav-white-bold-scrolled {
+            @include buttonNavbar(rgba(config.$grey, 0), false, rgba(config.$grey, 0), config.$grey, rgba(config.$grey, 0.1), "bold", true);
         }
 
-        .btn-nav-tertiary-light {
-            @include buttonNavbar(config.$tertiary, false, rgba(config.$tertiary, 0), config.$tertiary, rgba(config.$tertiary, 0.15), "light", false);
+        .btn-nav-white-light {
+            @include buttonNavbar(config.$white, false, rgba(config.$white, 0), config.$white, rgba(config.$white, 0.15), "light", false);
         }
 
-        .btn-nav-tertiary-light-scrolled {
-            @include buttonNavbar(rgba(config.$secondary, 0), false, rgba(config.$secondary, 0), config.$secondary, rgba(config.$secondary, 0.1), "light", false);
+        .btn-nav-white-light-scrolled {
+            @include buttonNavbar(rgba(config.$grey, 0), false, rgba(config.$grey, 0), config.$grey, rgba(config.$grey, 0.1), "light", false);
         }
 
-        .btn-nav-quaternary-bold {
-            @include buttonNavbar(config.$quaternary, true, rgba(config.$quaternary, 1), config.$primary, rgba(config.$quaternary, 1), "bold", false);
+        .btn-nav-blue-bold {
+            @include buttonNavbar(config.$blue, true, rgba(config.$blue, 1), config.$whitealmost, rgba(config.$blue, 1), "bold", false);
         }
 
         >ul ul {
@@ -558,7 +551,6 @@ a {
             width: 10em;
         }
 
-        // TODO
         .menulayouts::before {
             content: "";
             width: 1em;
@@ -574,71 +566,29 @@ a {
 
     }
 
-    .btn-nav-quaternary-bold:hover {
-        filter: brightness(1.075);
-    }
-
-    .btn-nav-tertiary-light::before {
-
-        top: 0;
-
-        content: "";
-        width: 0.4em;
-        height: 0.4em;
-
-        border-top: 3px solid white;
-        border-left: 3px solid white;
-
-        margin-right: 1em;
-
-
-        transform: rotate(225deg);
-    }
-
-    .btn-nav-tertiary-light-scrolled::before {
-
-        top: 0;
-
-        content: "";
-        width: 0.4em;
-        height: 0.4em;
-
-        border-top: 3px solid config.$secondary;
-        border-left: 3px solid config.$secondary;
-
-        margin-right: 1em;
-
-
-        transform: rotate(225deg);
-    }
-
-
     .whitespace {
         padding: 0.2em 1em;
 
-        background-color: config.$tertiary;
+        background-color: config.$white;
         height: fit-content;
 
-        border-bottom: 1px solid config.$secondarylight;
+        border-bottom: 1px solid config.$greylight;
 
         &:hover {
-            background-color: config.$quaternary;
+            background-color: config.$blue;
         }
 
-    }
-
-    .no-border-bot {
-        border: 0px;
     }
 
     .buttonnavbarcontainer {
         display: none;
     }
-
+    // MAIN
     .main {
         position: static;
     }
 
+    // HEADER
     .headercontainer {
         @include backgroundstyle("desktop", "light", false, true, false, true);
     }
@@ -651,11 +601,6 @@ a {
         width: 20em;
     }
 
-    .sectioncontainer {
-        @include backgroundstyle("desktop", "dark", true, true, false, false);
-        padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
-    }
-
     .line-decoration {
         i {
             font-size: 4em;
@@ -666,6 +611,12 @@ a {
         padding: map.get(config.$padding, "medium") map.get(config.$padding, "xx-large");
     }
 
+    // ---------- CONTAINS SECTIONS : COLORED SECTION, CHECKMARK SECTION AND ARTICLES ----------
+    .sectioncontainer {
+        @include backgroundstyle("desktop", "dark", true, true, false, false);
+        padding: map.get(config.$padding, "large") map.get(config.$padding, "xx-large");
+    }
+    // Colored section
     .coloredsection {
         @include backgroundstyle("desktop", "light", false, true, false, false);
         flex-direction: row-reverse;
@@ -683,7 +634,7 @@ a {
         max-width: 65%;
         text-align: left;
     }
-
+    // checkmark section
     .checkmarksection {
         flex-direction: row;
 
@@ -699,15 +650,7 @@ a {
             font-size: 7em;
         }
     }
-
-    .prefooter,
-    .footer,
-    .coloredsection,
-    .articlesection {
-        padding: map.get(config.$padding, "large") map.get(config.$padding, "large");
-
-    }
-
+    //articles section
     .containerarticle {
         display: flex;
         flex-flow: row wrap;
@@ -722,6 +665,46 @@ a {
         }
     }
 
+    // 
+    .btn-nav-blue-bold:hover {
+        filter: brightness(1.075);
+    }
+
+    .btn-nav-white-light::before {
+
+        top: 0;
+
+        content: "";
+        width: 0.4em;
+        height: 0.4em;
+
+        border-top: 3px solid white;
+        border-left: 3px solid white;
+
+        margin-right: 1em;
+
+
+        transform: rotate(225deg);
+    }
+
+    .btn-nav-white-light-scrolled::before {
+
+        top: 0;
+
+        content: "";
+        width: 0.4em;
+        height: 0.4em;
+
+        border-top: 3px solid config.$grey;
+        border-left: 3px solid config.$grey;
+
+        margin-right: 1em;
+
+
+        transform: rotate(225deg);
+    }
+    
+    // FOOTER
     .prefooter {
         @include backgroundstyle("desktop", "light", true, false, false, true);
     }
@@ -739,19 +722,20 @@ a {
     .dottedpipe::after {
         content: "";
         height: 10.5rem;
-        border-right: 1px dotted config.$secondary;
+        border-right: 1px dotted config.$grey;
         margin: 1rem;
     }
 
-    .container {
+    // HELPERS
+    .flex-center-row {
         display: flex;
         justify-content: center;
         width: 100%;
         flex-direction: row;
     }
 
-
-
-
-
+    .no-border-bot {
+        border: 0px;
+    }
+    
 }
